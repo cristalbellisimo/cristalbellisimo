@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title id="pageTitle">Blog — Cristal Bellísimo</title>
+  <meta property="og:type" content="article">
+  <meta id="ogTitle" property="og:title" content="Cristal Bellísimo">
+  <meta id="ogDesc" property="og:description" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--p:#02227c;--g:#4a6fa1;--s:#ffffff;--il:#02227c;--b:rgba(2,34,124,.2)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--s);color:var(--p);font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+    img,video{display:block;max-width:100%}
+    .serif{font-family:'Libre Caslon Text',serif}
+    .container{max-width:760px;margin:0 auto;padding:0 32px}
+    @media(max-width:600px){.container{padding:0 20px}}
+
+    .hdr{position:sticky;top:0;z-index:300;background:var(--s);border-bottom:1px solid var(--b)}
+    .hdr-in{max-width:1120px;margin:0 auto;padding:0 56px;display:flex;align-items:center;justify-content:space-between;height:62px}
+    @media(max-width:768px){.hdr-in{padding:0 20px}}
+    .logo{font-family:'Libre Caslon Text',serif;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:var(--p)}
+    .back{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--il)}
+
+    .capa{max-width:1120px;margin:0 auto;padding:0 56px}
+    @media(max-width:768px){.capa{padding:0 20px}}
+    .capa img,.capa video{width:100%;height:440px;object-fit:cover;margin-top:32px}
+    @media(max-width:700px){.capa img,.capa video{height:280px}}
+
+    article{padding:40px 0 100px}
+    .post-data{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--il);margin-bottom:14px}
+    h1{font-family:'Libre Caslon Text',serif;font-size:clamp(28px,5vw,44px);font-weight:400;line-height:1.15;margin-bottom:28px}
+    .corpo p{font-size:16px;line-height:1.9;color:rgba(2,34,124,.82);margin-bottom:20px}
+    .galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-top:36px}
+    .galeria img,.galeria video{width:100%;height:220px;object-fit:cover}
+    @media(max-width:600px){.galeria{grid-template-columns:1fr}}
+    .cta-fim{border-top:1px solid var(--b);margin-top:48px;padding-top:32px;text-align:center}
+    .btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:12px 26px;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;border:none;background:var(--p);color:var(--s)}
+    .naoEncontrado{padding:120px 0;text-align:center}
+
+    .ftr{background:var(--p);color:var(--s);padding:48px 0;text-align:center;margin-top:40px}
+    .ftr a{font-size:12px;color:rgba(254,249,240,.5);margin:0 10px}
+    .ftr a:hover{color:var(--s)}
+    .wa{position:fixed;bottom:26px;right:26px;z-index:500;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.25)}
+    .wa svg{width:28px;height:28px;fill:white}
+  </style>
+</head>
+<body>
+
+<header class="hdr"><div class="hdr-in">
+  <a href="index.html" class="logo">Cristal Bellísimo</a>
+  <a href="blog.html" class="back" id="lnkVoltar">← Blog</a>
+</div></header>
+
+<div class="capa" id="capaWrap"></div>
+
+<div class="container">
+  <article id="artigo">
+    <div class="naoEncontrado" id="naoEncontrado" style="display:none">
+      <p class="serif" style="font-size:22px;margin-bottom:16px;" id="txtNaoEncontrado">Artigo não encontrado.</p>
+      <a href="blog.html" class="btn" id="btnVoltarBlog">Voltar ao Blog</a>
+    </div>
+    <div id="conteudo"></div>
+  </article>
+</div>
+
+<footer class="ftr">
+  <a href="index.html">Cristal Bellísimo</a> ·
+  <a href="privacy.html">Privacidade</a> ·
+  <a href="terms.html">Termos</a>
+</footer>
+
+<a href="https://wa.me/5562994503554" class="wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="blog.js"></script>
+<script>
+const TP = {
+  pt: { back:'← Blog', naoEnc:'Artigo não encontrado.', voltar:'Voltar ao Blog', outrasHistorias:'Outras Histórias do Ateliê' },
+  es: { back:'← Blog', naoEnc:'Artículo no encontrado.', voltar:'Volver al Blog', outrasHistorias:'Otras Historias del Atelier' },
+  en: { back:'← Blog', naoEnc:'Article not found.', voltar:'Back to Blog', outrasHistorias:'More Stories from the Atelier' }
+};
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function isVideo(src){return /\.(mp4|webm|mov|m4v|ogg)$/i.test(src||'');}
+function fmtData(iso,lang){
+  const d=new Date(iso+'T00:00:00');
+  if(isNaN(d))return iso||'';
+  const locales={pt:'pt-BR',es:'es-ES',en:'en-US'};
+  return d.toLocaleDateString(locales[lang]||'pt-BR',{day:'2-digit',month:'long',year:'numeric'});
+}
+function corpoHTML(paragrafos){
+  return (paragrafos||[]).map(p=>typeof p==='string'?`<p>${esc(p)}</p>`:'').join('');
+}
+function galeriaHTML(itens){
+  if(!itens||!itens.length) return '';
+  return `<div class="galeria">${itens.map(it=>{
+    const src=typeof it==='string'?it:(it&&it.src)||'';
+    return isVideo(src) ? `<video src="${esc(src)}" controls playsinline preload="metadata"></video>` : `<img src="${esc(src)}" alt="" loading="lazy">`;
+  }).join('')}</div>`;
+}
+function getLang(){const s=localStorage.getItem('cb_l'),br=navigator.language.slice(0,2),m={pt:'pt',es:'es',en:'en'};return s||m[br]||'pt';}
+function render(){
+  const lang=getLang();
+  const tp=TP[lang]||TP.pt;
+  document.documentElement.setAttribute('data-lang',lang);
+  document.documentElement.lang=lang==='pt'?'pt-BR':lang==='es'?'es':'en';
+  document.getElementById('lnkVoltar').textContent=tp.back;
+  document.getElementById('txtNaoEncontrado').textContent=tp.naoEnc;
+  document.getElementById('btnVoltarBlog').textContent=tp.voltar;
+
+  const slug=new URLSearchParams(location.search).get('slug');
+  const posts=(window.BLOG&&Array.isArray(BLOG.posts))?BLOG.posts:[];
+  const post=posts.find(p=>p.slug===slug);
+
+  if(!post){
+    document.getElementById('naoEncontrado').style.display='';
+    document.getElementById('conteudo').innerHTML='';
+    document.getElementById('capaWrap').innerHTML='';
+    document.title=tp.naoEnc+' — Cristal Bellísimo';
+    document.getElementById('pageTitle').textContent=document.title;
+    return;
+  }
+  document.getElementById('naoEncontrado').style.display='none';
+  const tx=post[lang]||post.pt||{};
+  document.title=tx.titulo+' — Cristal Bellísimo';
+  document.getElementById('pageTitle').textContent=tx.titulo+' — Cristal Bellísimo';
+  document.getElementById('ogTitle').setAttribute('content',tx.titulo+' — Cristal Bellísimo');
+  document.getElementById('ogDesc').setAttribute('content',tx.resumo||'');
+
+  const capaWrap=document.getElementById('capaWrap');
+  capaWrap.innerHTML = post.capaVideo
+    ? `<video src="${esc(post.capaVideo)}" controls playsinline></video>`
+    : (post.capa ? `<img src="${esc(post.capa)}" alt="${esc(tx.titulo)}">` : '');
+
+  document.getElementById('conteudo').innerHTML = `
+    <p class="post-data">${fmtData(post.data,lang)}</p>
+    <h1 class="serif">${esc(tx.titulo)}</h1>
+    <div class="corpo">${corpoHTML(tx.corpo)}</div>
+    ${galeriaHTML(post.galeria)}
+    <div class="cta-fim"><a href="blog.html" class="btn">${tp.outrasHistorias}</a></div>
+  `;
+}
+render();
+</script>
+</body>
+</html>
