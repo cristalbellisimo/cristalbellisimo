@@ -11,22 +11,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
   <style>
-    :root{--p:#02227c;--g:#4a6fa1;--s:#ffffff;--il:#02227c;--b:rgba(2,34,124,.2)}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--s);color:var(--p);font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
-    a{text-decoration:none;color:inherit}
-    img,video{display:block;max-width:100%}
-    .serif{font-family:'Libre Caslon Text',serif}
-    .container{max-width:760px;margin:0 auto;padding:0 32px}
+
+    video{display:block;max-width:100%}
+    
+    .container{max-width:760px;padding:0 32px}  /* coluna de leitura, mais estreita */
     @media(max-width:600px){.container{padding:0 20px}}
 
-    .hdr{position:sticky;top:0;z-index:300;background:var(--s);border-bottom:1px solid var(--b)}
     .hdr-in{max-width:1120px;margin:0 auto;padding:0 56px;display:flex;align-items:center;justify-content:space-between;height:62px}
     @media(max-width:768px){.hdr-in{padding:0 20px}}
-    .logo{font-family:'Libre Caslon Text',serif;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:var(--p)}
+    
     .back{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--il)}
+    .hdr-r{display:flex;align-items:center;gap:22px}
 
     .capa{max-width:1120px;margin:0 auto;padding:0 56px}
     @media(max-width:768px){.capa{padding:0 20px}}
@@ -37,25 +34,35 @@
     .post-data{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--il);margin-bottom:14px}
     h1{font-family:'Libre Caslon Text',serif;font-size:clamp(28px,5vw,44px);font-weight:400;line-height:1.15;margin-bottom:28px}
     .corpo p{font-size:16px;line-height:1.9;color:rgba(2,34,124,.82);margin-bottom:20px}
+    .corpo-h{font-family:'Libre Caslon Text',serif;font-size:22px;font-weight:400;color:var(--p);margin:36px 0 14px}
+    .corpo-q{font-family:'Libre Caslon Text',serif;font-style:italic;font-size:20px;color:var(--gd);
+      border-left:2px solid var(--gd);padding-left:20px;margin:28px 0}
     .galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-top:36px}
     .galeria img,.galeria video{width:100%;height:220px;object-fit:cover}
     @media(max-width:600px){.galeria{grid-template-columns:1fr}}
     .cta-fim{border-top:1px solid var(--b);margin-top:48px;padding-top:32px;text-align:center}
-    .btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:12px 26px;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;border:none;background:var(--p);color:var(--s)}
+    .btn{padding:12px 26px}  /* botões do artigo, um pouco maiores que o padrão */
     .naoEncontrado{padding:120px 0;text-align:center}
 
     .ftr{background:var(--p);color:var(--s);padding:48px 0;text-align:center;margin-top:40px}
     .ftr a{font-size:12px;color:rgba(254,249,240,.5);margin:0 10px}
     .ftr a:hover{color:var(--s)}
-    .wa{position:fixed;bottom:26px;right:26px;z-index:500;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.25)}
-    .wa svg{width:28px;height:28px;fill:white}
+
   </style>
 </head>
 <body>
 
 <header class="hdr"><div class="hdr-in">
   <a href="index.html" class="logo">Cristal Bellísimo</a>
-  <a href="blog.html" class="back" id="lnkVoltar">← Blog</a>
+  <div class="hdr-r">
+    <a href="blog.html" class="back" id="lnkVoltar">← Blog</a>
+    <div class="lang" id="lang">
+      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu" aria-label="Idioma / Language">
+        <span id="langCur">PT</span><span class="lang-car" aria-hidden="true">▾</span>
+      </button>
+      <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Idioma / Language"></ul>
+    </div>
+  </div>
 </div></header>
 
 <div class="capa" id="capaWrap"></div>
@@ -64,7 +71,7 @@
   <article id="artigo">
     <div class="naoEncontrado" id="naoEncontrado" style="display:none">
       <p class="serif" style="font-size:22px;margin-bottom:16px;" id="txtNaoEncontrado">Artigo não encontrado.</p>
-      <a href="blog.html" class="btn" id="btnVoltarBlog">Voltar ao Blog</a>
+      <a href="blog.html" class="btn btn-n" id="btnVoltarBlog">Voltar ao Blog</a>
     </div>
     <div id="conteudo"></div>
   </article>
@@ -80,7 +87,7 @@
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<script src="blog.js"></script>
+<script src="content/blog.js"></script>
 <script>
 const TP = {
   pt: { back:'← Blog', naoEnc:'Artigo não encontrado.', voltar:'Voltar ao Blog', outrasHistorias:'Outras Histórias do Ateliê' },
@@ -96,7 +103,13 @@ function fmtData(iso,lang){
   return d.toLocaleDateString(locales[lang]||'pt-BR',{day:'2-digit',month:'long',year:'numeric'});
 }
 function corpoHTML(paragrafos){
-  return (paragrafos||[]).map(p=>typeof p==='string'?`<p>${esc(p)}</p>`:'').join('');
+  /* convenção simples: "## texto" vira subtítulo, "> texto" vira citação em destaque */
+  return (paragrafos||[]).map(p=>{
+    if(typeof p!=='string') return '';
+    if(p.startsWith('## ')) return `<h3 class="corpo-h">${esc(p.slice(3))}</h3>`;
+    if(p.startsWith('> ')) return `<blockquote class="corpo-q">${esc(p.slice(2))}</blockquote>`;
+    return `<p>${esc(p)}</p>`;
+  }).join('');
 }
 function galeriaHTML(itens){
   if(!itens||!itens.length) return '';
@@ -105,12 +118,27 @@ function galeriaHTML(itens){
     return isVideo(src) ? `<video src="${esc(src)}" controls playsinline preload="metadata"></video>` : `<img src="${esc(src)}" alt="" loading="lazy">`;
   }).join('')}</div>`;
 }
-function getLang(){const s=localStorage.getItem('cb_l'),br=navigator.language.slice(0,2),m={pt:'pt',es:'es',en:'en'};return s||m[br]||'pt';}
+/* IDIOMAS — acrescentar o francês aqui e em TP/blog.js quando as traduções existirem */
+const IDIOMAS=[
+  {c:'pt',curto:'PT',nome:'Português',html:'pt-BR'},
+  {c:'es',curto:'ES',nome:'Español', html:'es'},
+  {c:'en',curto:'EN',nome:'English',  html:'en'}
+];
+const DISP=IDIOMAS.filter(i=>TP[i.c]);
+function getLang(){
+  const s=localStorage.getItem('cb_l'),br=navigator.language.slice(0,2);
+  const ok=c=>DISP.some(i=>i.c===c);
+  return ok(s)?s:(ok(br)?br:'pt');
+}
+function setLang(l){localStorage.setItem('cb_l',l);render();}
 function render(){
   const lang=getLang();
   const tp=TP[lang]||TP.pt;
+  const inf=DISP.find(i=>i.c===lang)||DISP[0];
   document.documentElement.setAttribute('data-lang',lang);
-  document.documentElement.lang=lang==='pt'?'pt-BR':lang==='es'?'es':'en';
+  document.documentElement.lang=inf.html;
+  document.getElementById('langCur').textContent=inf.curto;
+  document.querySelectorAll('#langMenu li').forEach(li=>li.setAttribute('aria-selected',li.dataset.l===lang?'true':'false'));
   document.getElementById('lnkVoltar').textContent=tp.back;
   document.getElementById('txtNaoEncontrado').textContent=tp.naoEnc;
   document.getElementById('btnVoltarBlog').textContent=tp.voltar;
@@ -144,9 +172,31 @@ function render(){
     <h1 class="serif">${esc(tx.titulo)}</h1>
     <div class="corpo">${corpoHTML(tx.corpo)}</div>
     ${galeriaHTML(post.galeria)}
-    <div class="cta-fim"><a href="blog.html" class="btn">${tp.outrasHistorias}</a></div>
+    <div class="cta-fim"><a href="blog.html" class="btn btn-n">${tp.outrasHistorias}</a></div>
   `;
 }
+/* ── seletor de idioma ── */
+const lang=document.getElementById('lang'),langBtn=document.getElementById('langBtn'),langMenu=document.getElementById('langMenu');
+langMenu.innerHTML=DISP.map(i=>`<li role="option" data-l="${i.c}" tabindex="-1" aria-selected="false">${i.nome}</li>`).join('');
+function langAbrir(v){lang.classList.toggle('on',v);langBtn.setAttribute('aria-expanded',v?'true':'false');
+  /* no desktop o ponteiro continua sobre o menu depois de escolher; 'travado' impede que o
+     :hover reabra sozinho — destrava assim que o ponteiro sai do seletor */
+  if(!v)lang.classList.add('travado');}
+lang.addEventListener('mouseleave',()=>lang.classList.remove('travado'));
+langBtn.addEventListener('click',e=>{e.stopPropagation();langAbrir(!lang.classList.contains('on'));});
+langMenu.addEventListener('click',e=>{const li=e.target.closest('li');if(!li)return;setLang(li.dataset.l);langAbrir(false);langBtn.focus();});
+langMenu.addEventListener('keydown',e=>{
+  const itens=[...langMenu.querySelectorAll('li')],i=itens.indexOf(document.activeElement);
+  if(e.key==='Enter'||e.key===' '){e.preventDefault();if(i>=0){setLang(itens[i].dataset.l);langAbrir(false);langBtn.focus();}}
+  if(e.key==='ArrowDown'){e.preventDefault();(itens[i+1]||itens[0]).focus();}
+  if(e.key==='ArrowUp'){e.preventDefault();(itens[i-1]||itens[itens.length-1]).focus();}
+});
+langBtn.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();langAbrir(true);
+  /* espera o menu ficar realmente visível — um elemento com visibility:hidden não aceita foco */
+  requestAnimationFrame(()=>{const p=langMenu.querySelector('li');if(p)p.focus();});}});
+document.addEventListener('click',()=>langAbrir(false));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){langAbrir(false);langBtn.focus();}});
+
 render();
 </script>
 </body>

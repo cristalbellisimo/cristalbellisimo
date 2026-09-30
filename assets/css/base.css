@@ -1,0 +1,129 @@
+/* ============================================================================
+   CRISTAL BELLÍSIMO — ESTILO BASE
+   ----------------------------------------------------------------------------
+   Este arquivo guarda o que é COMUM a todas as páginas do site:
+   cores da marca, tipografia, cabeçalho, seletor de idioma, menu do celular,
+   botões e o botão flutuante do WhatsApp.
+
+   ⚠️ AS CORES DA MARCA VIVEM AQUI E SÓ AQUI.
+   Para mudar o azul do site inteiro, mude --p uma vez, nesta página.
+   Antes desta reorganização, a mesma cor estava escrita em 5 arquivos
+   diferentes e era preciso lembrar de todos.
+
+   Cada página tem, além disto, o seu próprio estilo de layout dentro do
+   próprio arquivo .html — porque esse layout não se repete em lugar nenhum.
+   ============================================================================ */
+
+/* ── CORES E MEDIDAS DA MARCA ─────────────────────────────────────────────── */
+:root{
+  --p:#02227c;        /* azul-marinho — cor principal, texto e fundos escuros */
+  --g:var(--p);       /* mesma cor do texto, para uso sobre fundo CLARO */
+  --gd:#ffffff;       /* branco — para uso sobre fundo ESCURO/azul-marinho
+                         (senão o azul-marinho ficaria ilegível sobre azul-marinho) */
+  --s:#ffffff;        /* fundo principal */
+  --sc:#f2ede4;       /* fundo areia, das seções alternadas */
+  --sh:#dde6f0;       /* azul muito claro, usado em barras e trilhos */
+  --il:#02227c;       /* texto secundário */
+  --b:rgba(2,34,124,.2); /* linhas e bordas */
+}
+
+/* ── BASE ─────────────────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--s);color:var(--p);font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;-webkit-user-select:none;user-select:none}
+a{text-decoration:none;color:inherit}
+.serif{font-family:'Libre Caslon Text',serif}
+.label{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.gold{color:var(--gd)}
+.container{max-width:1280px;margin:0 auto;padding:0 56px}
+@media(max-width:768px){.container{padding:0 20px}}
+
+/* ── BOTÕES ───────────────────────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;padding:11px 24px;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;
+  border:none;transition:all .25s}
+.btn-g{background:var(--g);color:var(--s)}
+.btn-g:hover{filter:brightness(1.08)}
+.btn-n{background:var(--p);color:var(--s)}
+.btn-n:hover{background:#0f1929}
+.btn-ow{background:transparent;color:rgba(254,249,240,.9);border:1px solid rgba(254,249,240,.4)}
+.btn-ow:hover{background:rgba(254,249,240,.08);border-color:rgba(254,249,240,.8)}
+.btn-gh{background:transparent;color:var(--g);border:1px solid rgba(2,34,124,.4)}
+.btn-gh:hover{background:var(--g);color:var(--s)}
+
+/* ── CABEÇALHO ────────────────────────────────────────────────────────────── */
+.hdr{position:sticky;top:0;z-index:300;background:var(--s);border-bottom:1px solid var(--b);transition:box-shadow .3s}
+.hdr.up{box-shadow:0 2px 24px rgba(26,43,75,.07)}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-family:'Libre Caslon Text',serif;font-size:18px;font-weight:400;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--p)}
+nav a{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--p);
+  margin-left:28px;transition:color .2s}
+nav a:hover,nav a.on{color:var(--g)}
+.hdr-r{display:flex;align-items:center;gap:18px}
+
+/* ── SELETOR DE IDIOMA ────────────────────────────────────────────────────────
+   Um único botão [ PT ▾ ]. No desktop abre ao passar o mouse; no celular e no
+   tablet abre ao tocar. A lista de idiomas é montada pelo JavaScript a partir
+   da lista IDIOMAS de cada página — não escreva os idiomas à mão aqui.
+   ─────────────────────────────────────────────────────────────────────────── */
+.lang{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;
+  font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--p);padding:7px 0;border-bottom:1px solid transparent;transition:border-color .25s}
+.lang-btn:hover,.lang-btn[aria-expanded="true"]{border-bottom-color:var(--b)}
+.lang-btn:focus-visible{outline:1px solid var(--p);outline-offset:3px}
+.lang-car{font-size:8px;opacity:.5;transition:transform .25s}
+.lang-btn[aria-expanded="true"] .lang-car{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:100%;right:0;margin-top:8px;min-width:158px;list-style:none;
+  background:var(--s);border:1px solid var(--b);padding:5px 0;z-index:400;
+  opacity:0;visibility:hidden;transform:translateY(-5px);
+  transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s}
+.lang.on .lang-menu{opacity:1;visibility:visible;transform:none;
+  transition:opacity .2s ease,transform .2s ease,visibility 0s}
+.lang-menu li{font-size:12.5px;letter-spacing:.04em;color:var(--p);padding:10px 20px;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .18s}
+.lang-menu li:hover,.lang-menu li:focus{background:var(--sc);outline:none}
+.lang-menu li[aria-selected="true"]{font-weight:600}
+.lang-menu li[aria-selected="true"]::after{content:'·';color:var(--p);opacity:.45;font-size:15px}
+/* no desktop com mouse, passar o cursor já abre.
+   '.travado' evita que o menu reabra sozinho logo depois de escolher um idioma */
+@media(hover:hover) and (pointer:fine){
+  .lang:not(.travado):hover .lang-menu{opacity:1;visibility:visible;transform:none;
+    transition:opacity .2s ease,transform .2s ease,visibility 0s}
+}
+
+/* ── MENU DO CELULAR ──────────────────────────────────────────────────────── */
+.burger{display:none;flex-direction:column;justify-content:center;gap:4.5px;background:none;border:none;
+  cursor:pointer;padding:9px 2px;width:30px}
+.burger span{display:block;width:19px;height:1.5px;background:var(--p);transition:transform .28s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.burger:focus-visible{outline:1px solid var(--p);outline-offset:2px}
+.mnav{display:none;border-top:1px solid var(--b);background:var(--s)}
+.mnav.on{display:block}
+.mnav a{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--p);padding:16px 0;border-bottom:1px solid var(--b)}
+.mnav a:last-child{border-bottom:none}
+
+/* abaixo de 900px o menu horizontal dá lugar ao hambúrguer.
+   O SELETOR DE IDIOMA CONTINUA VISÍVEL — antes ele desaparecia junto. */
+@media(max-width:900px){
+  nav{display:none}
+  .burger{display:flex}
+}
+/* em telas bem estreitas o botão "Consultar" sai do cabeçalho;
+   o botão flutuante do WhatsApp continua cobrindo essa função */
+@media(max-width:540px){
+  .hdr-r .btn{display:none}
+  .hdr-r{gap:10px}
+}
+
+/* ── BOTÃO FLUTUANTE DO WHATSAPP ──────────────────────────────────────────── */
+.wa{position:fixed;bottom:26px;right:26px;z-index:500;width:56px;height:56px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 18px rgba(0,0,0,.25);transition:transform .2s}
+.wa:hover{transform:scale(1.09)}
+.wa svg{width:28px;height:28px;fill:white}

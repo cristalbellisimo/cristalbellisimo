@@ -1,0 +1,9 @@
+# Arquivos internos de trabalho — NÃO vão para o GitHub (decisão c1/c2, 25/09/2026).
+# Cópia deles fica no Projeto do Claude e numa pasta separada no notebook.
+docs/
+.claude/
+docs-decisions.md
+INVENTARIO-TEXTOS.md
+_imgpaths.txt
+inquerito*.html
+.DS_Store

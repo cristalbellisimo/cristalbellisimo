@@ -4,45 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
+  <meta name="description" content="Joias artesanais que guardam histórias atemporais. Pedras naturais, prata 950, filigrana.">
   <meta property="og:title" content="Cristal Bellísimo — Handmade Jewellery">
   <meta property="og:description" content="Joias artesanais que guardam histórias atemporais. Pedras naturais, prata 950, filigrana.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="images/hero2/hero-flor-1.jpg">
+  <meta property="og:image" content="images/colecoes/anelcitrino-1.jpg">
   <title>Cristal Bellísimo — Handmade Jewellery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
   <style>
-    :root{--p:#02227c;--g:var(--p);--gd:#ffffff;--s:#ffffff;--sc:#f2ede4;--sh:#dde6f0;--il:#02227c;--b:rgba(2,34,124,.2)}
-    /* --g = mesma cor da fonte (azul-marinho), para uso sobre fundo CLARO. --gd = branco, só para uso sobre fundo ESCURO/azul-marinho (senão o azul-marinho fica ilegível em cima de azul-marinho). */
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--s);color:var(--p);font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    img{display:block;max-width:100%;-webkit-user-select:none;user-select:none}
-    a{text-decoration:none;color:inherit}
-    .serif{font-family:'Libre Caslon Text',serif}
-    .label{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
-    .gold{color:var(--gd)}
-    .container{max-width:1280px;margin:0 auto;padding:0 56px}
-    @media(max-width:768px){.container{padding:0 20px}}
+
+    body{overflow-x:hidden}
 
     /* HEADER */
-    .hdr{position:sticky;top:0;z-index:300;background:var(--s);border-bottom:1px solid var(--b);transition:box-shadow .3s}
-    .hdr.up{box-shadow:0 2px 24px rgba(26,43,75,.07)}
-    .hdr-in{display:flex;align-items:center;justify-content:space-between;height:62px}
-    .logo{font-family:'Libre Caslon Text',serif;font-size:18px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--p)}
-    nav a{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--p);margin-left:28px;transition:color .2s}
-    nav a:hover,nav a.on{color:var(--g)}
-    .hdr-r{display:flex;align-items:center;gap:18px}
-    .lsw button{background:none;border:none;cursor:pointer;font-size:11px;font-weight:600;letter-spacing:.1em;color:rgba(26,43,75,.4);font-family:'Hanken Grotesk',sans-serif;padding:3px 2px;transition:color .2s}
-    .lsw button:hover,.lsw button.on{color:var(--p)}
-    .lsw button.on{border-bottom:1px solid var(--g)}
-    .lsw .d{color:var(--b);margin:0 2px}
-    .btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:11px 24px;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;border:none;transition:all .25s}
-    .btn-g{background:var(--g);color:var(--s)}.btn-g:hover{filter:brightness(1.08)}
-    .btn-n{background:var(--p);color:var(--s)}.btn-n:hover{background:#0f1929}
-    .btn-ow{background:transparent;color:rgba(254,249,240,.9);border:1px solid rgba(254,249,240,.4)}.btn-ow:hover{background:rgba(254,249,240,.08);border-color:rgba(254,249,240,.8)}
-    .btn-gh{background:transparent;color:var(--g);border:1px solid rgba(2,34,124,.4)}.btn-gh:hover{background:var(--g);color:var(--s)}
 
     /* HERO */
     .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -144,11 +120,11 @@
     .ff{font-size:11px;color:rgba(254,249,240,.3);letter-spacing:.03em}
     .legal-links a{font-size:11px;color:rgba(254,249,240,.3);margin-left:16px;transition:color .2s}
     .legal-links a:hover{color:var(--gd)}
-
-    /* WA FAB */
-    .wa{position:fixed;bottom:26px;right:26px;z-index:500;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.25);transition:transform .2s}
-    .wa:hover{transform:scale(1.09)}
-    .wa svg{width:28px;height:28px;fill:white}
+    .flang{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .flang button{background:none;border:none;cursor:pointer;font-size:12px;font-weight:600;padding:0;
+      font-family:'Hanken Grotesk',sans-serif;color:rgba(254,249,240,.5);transition:color .2s}
+    .flang button:hover,.flang button.on{color:var(--gd)}
+    .flang .d{color:rgba(254,249,240,.3)}
 
     /* LIGHTBOX */
     .lb{display:none;position:fixed;inset:0;z-index:1000;background:rgba(26,43,75,.93);align-items:center;justify-content:center}
@@ -167,7 +143,9 @@
 
     /* RESPONSIVE */
     @media(max-width:900px){
-      nav,.hdr-r .lsw{display:none}
+      nav{display:none}
+      .burger{display:flex}
+      /* o seletor de idioma CONTINUA visível no celular (antes desaparecia) */
       .alma{grid-template-columns:1fr}
       .alma-t{padding:48px 20px}
       .colgrid{grid-template-columns:1fr}
@@ -181,6 +159,9 @@
     @media(max-width:540px){
       .fg{grid-template-columns:1fr}
       .hero-btns{flex-direction:column;align-items:center}
+      /* o botão "Consultar" sai do cabeçalho apertado — o botão flutuante do WhatsApp cobre a função */
+      .hdr-r .btn{display:none}
+      .hdr-r{gap:10px}
     }
   </style>
 </head>
@@ -199,20 +180,32 @@
     <a href="#contato" data-i18n="nv4">Contato</a>
   </nav>
   <div class="hdr-r">
-    <div class="lsw">
-      <button id="bpt" onclick="L('pt')" class="on">PT</button><span class="d">·</span>
-      <button id="bes" onclick="L('es')">ES</button><span class="d">·</span>
-      <button id="ben" onclick="L('en')">EN</button>
+    <div class="lang" id="lang">
+      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu" aria-label="Idioma / Language">
+        <span id="langCur">PT</span><span class="lang-car" aria-hidden="true">▾</span>
+      </button>
+      <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Idioma / Language"></ul>
     </div>
-    <a href="https://wa.me/5562994503554" target="_blank" rel="noopener" class="btn btn-g" data-i18n="bi">Consultar</a>
+    <a href="https://wa.me/5562994503554" data-wa="geral" target="_blank" rel="noopener" class="btn btn-g" data-i18n="bi">Consultar</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</div></div>
+<div class="mnav" id="mnav"><div class="container">
+  <a href="#colecoes" data-i18n="nv1">Coleções</a>
+  <a href="#heranca" data-i18n="nv2">A Herança</a>
+  <a href="#atelie" data-i18n="nv5" id="mnavAtelie">Ateliê</a>
+  <a href="blog.html" data-i18n="nvb">Blog</a>
+  <a href="#gemologia" data-i18n="nv3">Gemologia</a>
+  <a href="#contato" data-i18n="nv4">Contato</a>
 </div></div>
 </header>
 
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg">
-    <img src="images/hero2/hero-flor-1.jpg" alt="Anel Flor Ametista — Cristal Bellísimo" id="imgHero" fetchpriority="high">
+    <img src="images/colecoes/anelcitrino-1.jpg" alt="Anel Citrino — Cristal Bellísimo" id="imgHero" fetchpriority="high">
   </div>
   <div class="hero-c fi">
     <span class="label gold" style="letter-spacing:.22em;margin-bottom:20px;display:block;" data-i18n="he">Cristal Bellísimo · Handmade Jewellery · Brasil</span>
@@ -230,7 +223,7 @@
 <div class="trust"><div class="container"><div class="tgrid">
   <div class="tc"><div class="tnum serif">50</div><div class="tlbl" data-i18n="ty">Anos de Ofício</div></div>
   <div class="tc"><div class="tnum serif">100%</div><div class="tlbl" data-i18n="th">Artesanal</div></div>
-  <div class="tc"><div class="tnum serif">9+</div><div class="tlbl" data-i18n="ts">Pedras Naturais</div></div>
+  <div class="tc"><div class="tnum serif" aria-hidden="true">✦</div><div class="tlbl" data-i18n="ts">Pedras Naturais</div></div>
   <div class="tc"><div class="tnum serif">∞</div><div class="tlbl" data-i18n="tu">Peças Únicas</div></div>
 </div></div></div>
 
@@ -246,7 +239,7 @@
     <div class="alma-s"><span class="serif" style="font-style:italic;font-size:13px;color:var(--il);" data-i18n="as">MMXXIV · Crônicas do Ateliê</span></div>
   </div>
   <div class="fi d1" style="overflow:hidden;">
-    <img src="images/colecoes/flor-folha-1.jpg" alt="Anel artesanal — filigrana em prata" id="imgHeranca" style="width:100%;height:100%;object-fit:cover;min-height:500px;object-position:center;">
+    <img src="images/colecoes/anelcitrino-2.jpg" alt="Anel artesanal — filigrana em prata" id="imgHeranca" style="width:100%;height:100%;object-fit:cover;min-height:500px;object-position:center;">
   </div>
 </div>
 
@@ -257,14 +250,13 @@
       <p class="sl" data-i18n="spt">Metodologia Técnica</p>
       <table class="spt">
         <tr><td data-i18n="spu">Pureza</td><td>950 Prata Fina · 18k–24k Ouro</td></tr>
-        <tr><td data-i18n="spm">Método</td><td data-i18n="spmv">Filigrana · Cera Perdida · Cinzel</td></tr>
-        <tr><td data-i18n="sph">Dedicação</td><td data-i18n="sphv">48h+ por peça</td></tr>
-        <tr><td data-i18n="spo">Origem</td><td data-i18n="spov">Montanhas do Brasil</td></tr>
+        <tr><td data-i18n="spm">Método</td><td data-i18n="spmv">Filigrana · Granulação · Engaste à Mão</td></tr>
+        <tr><td data-i18n="sph">Dedicação</td><td data-i18n="sphv">Dias ou semanas por peça</td></tr>
+        <tr><td data-i18n="spo">Origem</td><td data-i18n="spov">Colina, Floresta e Rio</td></tr>
         <tr><td data-i18n="spg">Pedras</td><td data-i18n="spgv">100% Naturais e Certificadas</td></tr>
       </table>
     </div>
     <div class="sp-r">
-      <p class="serif" style="font-size:clamp(18px,2.2vw,26px);font-weight:400;color:var(--p);line-height:1.55;" data-i18n="smf">Rejeitamos a eficiência da máquina em favor da <em class="gold">imperfeição intencional</em> da mão humana. Cada peça é um diálogo único entre o artesão e o elemento bruto.</p>
     </div>
   </div>
 </div>
@@ -316,9 +308,9 @@
       </div>
     </div>
     <div class="cert-g">
-      <div><p class="cfl" data-i18n="cm">Metalurgia</p><p class="cfv" data-i18n="cmv">Prata 950 Fina · Ouro 18k–24k<br>Procedência Brasileira</p></div>
+      <div><p class="cfl" data-i18n="cm">Metalurgia</p><p class="cfv" data-i18n="cmv">Prata Fina · Ouro · Platina</p></div>
       <div><p class="cfl" data-i18n="cg">Gemologia</p><p class="cfv" data-i18n="cgv">Ametista · Granate · Turquesa<br>Coral · Água-Marinha · Safira</p></div>
-      <div><p class="cfl" data-i18n="ck">Técnica</p><p class="cfv" data-i18n="ckv">Filigrana Tradicional<br>Cera Perdida · Polimento Manual</p></div>
+      <div><p class="cfl" data-i18n="ck">Técnica</p><p class="cfv" data-i18n="ckv">Filigrana Tradicional<br>Granulação · Engaste à Mão</p></div>
       <div><p class="cfl" data-i18n="cr">Artesão</p><p class="cfv">[Nome do Mestre]<br><span data-i18n="crv">Mestre Ourives · Cristal Bellísimo</span></p></div>
     </div>
     <p class="cert-q" data-i18n="cq">"Não construímos joias; refinamos os artefatos que a natureza deixou para trás."</p>
@@ -343,7 +335,7 @@
     <div class="gem-c fi d2"><p class="sl" data-i18n="g6n">Pedra da Lua</p><p style="font-size:10px;color:var(--g);margin-bottom:10px;" data-i18n="g6o">ORIGEM: Sri Lanka · Índia</p><div class="mohs"><div class="mohs-f" style="width:62%"></div></div><p style="font-size:12px;color:var(--il);margin-bottom:4px;"><span data-i18n="gm">Dureza Mohs:</span> 6/10</p><p style="font-size:13px;color:var(--il);line-height:1.65;margin-top:10px;" data-i18n="g6d">A pedra que captura a luz da lua em seu interior. Sagrada na tradição hindu. Adularescência única.</p></div>
   </div>
   <div style="text-align:center;margin-top:36px;" class="fi">
-    <a href="https://wa.me/5562994503554?text=Olá!%20Quero%20saber%20mais%20sobre%20as%20pedras%20disponíveis." target="_blank" class="btn btn-n" data-i18n="gcta">Consultar Pedras Disponíveis</a>
+    <a href="https://wa.me/5562994503554" data-wa="pedras" target="_blank" rel="noopener" class="btn btn-n" data-i18n="gcta">Consultar Pedras Disponíveis</a>
   </div>
 </div>
 </section>
@@ -351,12 +343,11 @@
 <!-- CTA -->
 <section class="sec-dark" id="contato">
 <div class="cta">
-  <div class="cta-bg"><img src="images/colecoes/flor-roxas-2.jpg" alt="" id="imgCta"></div>
+  <div class="cta-bg"><img src="images/colecoes/anelcitrino-3.jpg" alt="" id="imgCta"></div>
   <div class="cta-c fi">
-    <span class="sl gold" data-i18n="ctae">Além do Ornamento</span>
     <h2 class="serif" style="font-size:clamp(32px,5.5vw,64px);font-weight:400;font-style:italic;color:#fef9f0;line-height:1.1;margin:14px 0 36px;" data-i18n="ctat">Junte-se ao Legado</h2>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a href="https://wa.me/5562994503554" target="_blank" class="btn btn-g" data-i18n="ctab1">Agendar Consulta Privada</a>
+      <a href="https://wa.me/5562994503554" data-wa="consulta" target="_blank" rel="noopener" class="btn btn-g" data-i18n="ctab1">Agendar Consulta Privada</a>
       <a href="#colecoes" class="btn btn-ow" data-i18n="ctab2">Explorar a Coleção</a>
     </div>
   </div>
@@ -369,19 +360,15 @@
     <div>
       <p class="serif" style="font-size:20px;font-weight:400;color:#fef9f0;letter-spacing:.1em;margin-bottom:6px;">Cristal Bellísimo</p>
       <p class="label gold" style="margin-bottom:16px;">Handmade Jewellery</p>
-      <p style="font-size:13px;color:rgba(254,249,240,.55);line-height:1.75;margin-bottom:18px;" data-i18n="ftg">Joalheria artesanal nas montanhas do Brasil. Ouro, prata, filigrana e pedras naturais.</p>
+      <p style="font-size:13px;color:rgba(254,249,240,.55);line-height:1.75;margin-bottom:18px;" data-i18n="ftg">Joalheria artesanal sobre uma colina, entre a floresta e o rio. Ouro, prata, filigrana e pedras naturais.</p>
       <a href="https://www.instagram.com/cristalbellisimo" target="_blank" rel="noopener" class="fl">Instagram @cristalbellisimo</a>
       <a href="mailto:cristalbellisimo@gmail.com" class="fl">cristalbellisimo@gmail.com</a>
-      <a href="https://wa.me/5562994503554" target="_blank" rel="noopener" class="fl">WhatsApp +55 62 99450-3554</a>
+      <a href="https://wa.me/5562994503554" data-wa="geral" target="_blank" rel="noopener" class="fl">WhatsApp +55 62 99450-3554</a>
     </div>
     <div>
       <p class="fct" data-i18n="fc1">Coleções</p>
-      <a href="#colecoes" class="fl" data-i18n="f1">Anel Flor Ametista</a>
-      <a href="#colecoes" class="fl" data-i18n="f2">Brincos Ametista</a>
-      <a href="#colecoes" class="fl" data-i18n="f3">Granate Marquise</a>
-      <a href="#colecoes" class="fl" data-i18n="f4">Turquesa & Coral</a>
-      <a href="#colecoes" class="fl" data-i18n="f5">Água-Marinha</a>
-      <a href="https://wa.me/5562994503554?text=Quero%20uma%20peça%20exclusiva." target="_blank" class="fl" data-i18n="f6">Sob Encomenda</a>
+      <div id="fPecas"><!-- preenchido automaticamente a partir do catálogo --></div>
+      <a href="https://wa.me/5562994503554" data-wa="encomenda" target="_blank" rel="noopener" class="fl" data-i18n="f6">Sob Encomenda</a>
     </div>
     <div>
       <p class="fct" data-i18n="fc2">O Ateliê</p>
@@ -396,42 +383,36 @@
       <a href="terms.html" class="fl" data-i18n="lt">Termos de Uso</a>
       <p style="font-size:12px;color:rgba(254,249,240,.3);line-height:1.6;margin-top:6px;" data-i18n="llg">Protegido pela LGPD (Lei 13.709/2018).</p>
       <p class="fct" style="margin-top:22px;" data-i18n="fc4">Idioma</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
-        <button onclick="L('pt')" style="background:none;border:none;cursor:pointer;font-size:12px;font-weight:600;color:rgba(254,249,240,.5);font-family:'Hanken Grotesk',sans-serif;padding:0;transition:color .2s" onmouseover="this.style.color='#4a6fa1'" onmouseout="this.style.color='rgba(254,249,240,.5)'">PT</button>
-        <span style="color:rgba(254,249,240,.3)">·</span>
-        <button onclick="L('es')" style="background:none;border:none;cursor:pointer;font-size:12px;font-weight:600;color:rgba(254,249,240,.5);font-family:'Hanken Grotesk',sans-serif;padding:0;transition:color .2s" onmouseover="this.style.color='#4a6fa1'" onmouseout="this.style.color='rgba(254,249,240,.5)'">ES</button>
-        <span style="color:rgba(254,249,240,.3)">·</span>
-        <button onclick="L('en')" style="background:none;border:none;cursor:pointer;font-size:12px;font-weight:600;color:rgba(254,249,240,.5);font-family:'Hanken Grotesk',sans-serif;padding:0;transition:color .2s" onmouseover="this.style.color='#4a6fa1'" onmouseout="this.style.color='rgba(254,249,240,.5)'">EN</button>
-      </div>
+      <div class="flang" id="flang"></div>
     </div>
   </div>
   <div class="fb">
-    <p class="ff">© 2025 Cristal Bellísimo · <span data-i18n="fr">Todos os direitos reservados.</span></p>
+    <p class="ff">© 2026 Cristal Bellísimo · <span data-i18n="fr">Todos os direitos reservados.</span></p>
     <div class="legal-links"><a href="privacy.html" data-i18n="lp">Privacidade</a><a href="terms.html" data-i18n="lt">Termos</a></div>
-    <p class="ff serif" style="font-style:italic;" data-i18n="fm">Feito à mão nas montanhas do Brasil</p>
+    <p class="ff serif" style="font-style:italic;" data-i18n="fm">Feito à mão sobre uma colina, entre a floresta e o rio</p>
   </div>
 </div></footer>
 
 <!-- WA FAB -->
-<a href="https://wa.me/5562994503554" class="wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a href="https://wa.me/5562994503554" data-wa="geral" class="wa" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <!-- LIGHTBOX -->
-<div class="lb" id="lb">
-  <button class="lb-x" onclick="clb()">✕</button>
-  <button class="lb-nav lb-prev" onclick="nlb(-1)">‹</button>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galeria de fotos">
+  <button class="lb-x" onclick="clb()" aria-label="Fechar">✕</button>
+  <button class="lb-nav lb-prev" onclick="nlb(-1)" aria-label="Foto anterior">‹</button>
   <img id="lbi" src="" alt="Peça em destaque">
-  <button class="lb-nav lb-next" onclick="nlb(1)">›</button>
+  <button class="lb-nav lb-next" onclick="nlb(1)" aria-label="Próxima foto">›</button>
 </div>
 
-<script src="catalogo.js"></script>
+<script src="content/catalogo.js"></script>
 <script>
 /* ── i18n ── */
 const T={
-pt:{a1:'✦ Peças únicas feitas à mão nas montanhas do Brasil',a2:'✦ Ouro · Prata 950 · Filigrana · Pedras Naturais Certificadas',a3:'✦ 50 anos de ofício artesanal · Consulte via WhatsApp',a4:'✦ Handmade Jewellery · Joyería Artesanal',nv1:'Coleções',nv2:'A Herança',nv3:'Gemologia',nv4:'Contato',nv5:'Ateliê',nvb:'Blog',bi:'Consultar',he:'Cristal Bellísimo · Handmade Jewellery · Brasil',ht:'El Valor de la Naturaleza',hs:'Joias artesanais que guardam histórias atemporais',hb1:'Descobrir a Coleção',hb2:'Conhecer o Mestre',hsc:'Descobrir',ty:'Anos de Ofício',th:'Artesanal',ts:'Pedras Naturais',tu:'Peças Únicas',ac:'Capítulo I · A Herança',at1:'Alma y Oficio:',at2:'A Mão do Mestre',ab:'Uma herança familiar forjada entre as montanhas do Brasil, onde o metal não é apenas matéria — é memória. Cada curva, cada faceta e cada aresta que captura a luz é testemunho de uma técnica ancestral refinada pela paciência de cinco décadas.',as:'MMXXIV · Crônicas do Ateliê',spt:'Metodologia Técnica',spu:'Pureza',spm:'Método',spmv:'Filigrana · Cera Perdida · Cinzel',sph:'Dedicação',sphv:'48h+ por peça',spo:'Origem',spov:'Montanhas do Brasil',spg:'Pedras',spgv:'100% Naturais e Certificadas',smf:'Rejeitamos a eficiência da máquina em favor da imperfeição intencional da mão humana. Cada peça é um diálogo único entre o artesão e o elemento bruto.',cc:'Capítulo II · Coleções',ctt:'As Peças',p1m:'Prata 950 · Ametista · Filigrana',p1t:'Anel Flor Ametista',p1d:'Escultura botânica em prata 950 com filigrana artesanal. Ametista pear de corte facetado, engastada à mão entre folhas de prata.',p2m:'Prata 950 · Ametista · Filigrana',p2t:'Brincos Ametista',p2d:'Brincos escultóricos em prata 950. Forma fluida inspirada na corrente da água, com ametista oval engastada na ponta e detalhes de filigrana.',p3m:'Prata 950 · Granate Marquise',p3t:'Anel Granate',p3d:'Granate em corte marquise engastado em prata 950 com arabescos de filigrana. A pedra cor de fogo contrasta com a pureza da prata.',p4m:'Prata 950 · Turquesa · Coral',p4t:'Turquesa & Coral',p4d:'Design escultural que une o azul-céu da turquesa ao vermelho-vivo do coral. Filigrana delicada em toda a estrutura.',p5m:'Prata 950 · Água-Marinha',p5t:'Anel Água-Marinha',p5d:'Duas pedras de água-marinha brasileira em prata 950, rodeadas por espirais de filigrana. A cor do oceano capturada em metal.',p6m:'Prata 950 · Ametista · Esmeralda',p6t:'Anel Pássaro',p6d:'Escultura em prata 950 inspirada no voo do beija-flor. Ametista oval e esmeralda engastadas à mão em estrutura figurativa.',p7m:'Prata 950 · Safira · Pedra da Lua',p7t:'Flor do Campo',p7d:'Um encontro entre a pedra escura e a luz branca da pedra da lua. Design naturalista que evoca as flores silvestres das montanhas.',bip:'Consultar esta peça',ctc:'Capítulo III · Archivo Técnico',cth:'Certificado de Origem',ce:'Certificado de Origem',ctt2:'A Coleção Herança',ca:'Cristal Bellísimo Ateliê · Brasil',cm:'Metalurgia',cmv:'Prata 950 Fina · Ouro 18k–24k\nProcedência Brasileira',cg:'Gemologia',cgv:'Ametista · Granate · Turquesa\nCoral · Água-Marinha · Safira',ck:'Técnica',ckv:'Filigrana Tradicional\nCera Perdida · Polimento Manual',cr:'Artesão',crv:'Mestre Ourives · Cristal Bellísimo',cq:'"Não construímos joias; refinamos os artefatos que a natureza deixou para trás."',gc:'Capítulo IV · Gemologia',gt:'Conheça as Pedras',gs:'Acreditamos que entender uma pedra é aprender a amá-la.',gm:'Dureza Mohs',g1n:'Ametista',g1o:'ORIGEM: Brasil · Uruguai · Zâmbia',g1d:'Do grego "não embriagado". Violeta pálido ao roxo profundo. Símbolo de clareza e proteção.',g2n:'Granate',g2o:'ORIGEM: Brasil · Índia · África',g2d:'Do latim "granum". A pedra cor de brasa, símbolo de paixão, lealdade e energia vital.',g3n:'Turquesa',g3o:'ORIGEM: Irã · EUA · Egito',g3d:'5.000 anos de história. Sagrada para os nativos americanos e egípcios. O azul-céu eterno.',g4n:'Água-Marinha',g4o:'ORIGEM: Brasil · Minas Gerais',g4d:'Do latim "aqua marina". Brasil, maior produtor mundial das mais puras. A cor do oceano.',g5n:'Coral',g5o:'ORIGEM: Mediterrâneo · Japão',g5d:'Matéria orgânica viva. Adorno humano há 25.000 anos. Símbolo de proteção.',g6n:'Pedra da Lua',g6o:'ORIGEM: Sri Lanka · Índia',g6d:'A pedra que captura a luz da lua em seu interior. Sagrada na tradição hindu.',gcta:'Consultar Pedras Disponíveis',ctae:'Além do Ornamento',ctat:'Junte-se ao Legado',ctab1:'Agendar Consulta Privada',ctab2:'Explorar a Coleção',ftg:'Joalheria artesanal nas montanhas do Brasil. Ouro, prata, filigrana e pedras naturais.',fc1:'Coleções',f1:'Anel Flor Ametista',f2:'Brincos Ametista',f3:'Granate Marquise',f4:'Turquesa & Coral',f5:'Água-Marinha',f6:'Sob Encomenda',fc2:'O Ateliê',fc3:'Legal',lp:'Política de Privacidade',lt:'Termos de Uso',llg:'Protegido pela LGPD (Lei 13.709/2018).',fc4:'Idioma',fr:'Todos os direitos reservados.',fm:'Feito à mão nas montanhas do Brasil'},
-es:{a1:'✦ Piezas únicas hechas a mano en las montañas de Brasil',a2:'✦ Oro · Plata 950 · Filigrana · Piedras Naturales Certificadas',a3:'✦ 50 años de oficio artesanal · Consulta por WhatsApp',a4:'✦ Handmade Jewellery · Joyería Artesanal',nv1:'Colecciones',nv2:'La Herencia',nv3:'Gemología',nv4:'Contacto',nv5:'Atelier',nvb:'Blog',bi:'Consultar',he:'Cristal Bellísimo · Handmade Jewellery · Brasil',ht:'El Valor de la Naturaleza',hs:'Joyas artesanales que guardan historias atemporales',hb1:'Descubrir la Colección',hb2:'Conocer al Maestro',hsc:'Descubrir',ty:'Años de Oficio',th:'Artesanal',ts:'Piedras Naturales',tu:'Piezas Únicas',ac:'Capítulo I · La Herencia',at1:'Alma y Oficio:',at2:'La Mano del Maestro',ab:'Un legado familiar forjado entre las montañas de Brasil, donde el metal no es solo materia — es memoria. Cada curva, cada faceta y cada arista que captura la luz es testimonio de una técnica ancestral refinada por la paciencia de cinco décadas.',as:'MMXXIV · Crónicas del Atelier',spt:'Metodología Técnica',spu:'Pureza',spm:'Método',spmv:'Filigrana · Cera Perdida · Cincel',sph:'Dedicación',sphv:'48h+ por pieza',spo:'Origen',spov:'Montañas de Brasil',spg:'Piedras',spgv:'100% Naturales y Certificadas',smf:'Rechazamos la eficiencia de la máquina en favor de la imperfección intencional de la mano humana.',cc:'Capítulo II · Colecciones',ctt:'Las Piezas',p1m:'Plata 950 · Amatista · Filigrana',p1t:'Anillo Flor Amatista',p1d:'Escultura botánica en plata 950 con filigrana artesanal. Amatista pear de corte facetado, engastada a mano entre hojas de plata.',p2m:'Plata 950 · Amatista · Filigrana',p2t:'Aretes Amatista',p2d:'Aretes escultóricos en plata 950. Forma fluida inspirada en la corriente del agua, con amatista oval engastada en la punta.',p3m:'Plata 950 · Granate Marquise',p3t:'Anillo Granate',p3d:'Granate en corte marquise engastado en plata 950 con arabescos de filigrana. La piedra color fuego contrasta con la pureza de la plata.',p4m:'Plata 950 · Turquesa · Coral',p4t:'Turquesa & Coral',p4d:'Diseño escultural que une el azul-cielo de la turquesa al rojo vivo del coral. Filigrana delicada en toda la estructura.',p5m:'Plata 950 · Agua Marina',p5t:'Anillo Agua Marina',p5d:'Dos piedras de agua marina brasileña en plata 950, rodeadas por espirales de filigrana. El color del océano capturado en metal.',p6m:'Plata 950 · Amatista · Esmeralda',p6t:'Anillo Pájaro',p6d:'Escultura en plata 950 inspirada en el vuelo del colibrí. Amatista oval y esmeralda engastadas a mano en estructura figurativa.',p7m:'Plata 950 · Zafiro · Piedra de Luna',p7t:'Flor del Campo',p7d:'Un encuentro entre la piedra oscura y la luz blanca de la piedra de luna. Diseño naturalista.',bip:'Consultar esta pieza',ctc:'Capítulo III · Archivo Técnico',cth:'Certificado de Origen',ce:'Certificado de Origen',ctt2:'La Colección Herencia',ca:'Cristal Bellísimo Atelier · Brasil',cm:'Metalurgia',cmv:'Plata 950 Fina · Oro 18k–24k',cg:'Gemología',cgv:'Amatista · Granate · Turquesa\nCoral · Agua Marina · Zafiro',ck:'Técnica',ckv:'Filigrana Tradicional\nCera Perdida · Pulido Manual',cr:'Artesano',crv:'Maestro Orfebre · Cristal Bellísimo',cq:'"No construimos joyas; refinamos los artefactos que la naturaleza dejó atrás."',gc:'Capítulo IV · Gemología',gt:'Conozca las Piedras',gs:'Creemos que entender una piedra es aprender a amarla.',gm:'Dureza Mohs',g1n:'Amatista',g1o:'ORIGEN: Brasil · Uruguay · Zambia',g1d:'Del griego "no embriagado". Violeta pálido al púrpura profundo. Símbolo de claridad y protección.',g2n:'Granate',g2o:'ORIGEN: Brasil · India · África',g2d:'Del latín "granum". La piedra color brasa, símbolo de pasión, lealtad y energía vital.',g3n:'Turquesa',g3o:'ORIGEN: Irán · EE.UU. · Egipto',g3d:'5.000 años de historia. Sagrada para los nativos americanos y egipcios. El azul-cielo eterno.',g4n:'Agua Marina',g4o:'ORIGEN: Brasil · Minas Gerais',g4d:'Del latín "aqua marina". Brasil, mayor productor mundial. El color del océano.',g5n:'Coral',g5o:'ORIGEN: Mediterráneo · Japón',g5d:'Materia orgánica viva. Adorno humano hace 25.000 años. Símbolo de protección.',g6n:'Piedra de Luna',g6o:'ORIGEN: Sri Lanka · India',g6d:'La piedra que captura la luz de la luna en su interior. Sagrada en la tradición hindú.',gcta:'Consultar Piedras Disponibles',ctae:'Más Allá del Ornamento',ctat:'Únase al Legado',ctab1:'Agendar Consulta Privada',ctab2:'Explorar la Colección',ftg:'Joyería artesanal en las montañas de Brasil. Oro, plata, filigrana y piedras naturales.',fc1:'Colecciones',f1:'Anillo Flor Amatista',f2:'Aretes Amatista',f3:'Granate Marquise',f4:'Turquesa & Coral',f5:'Agua Marina',f6:'Bajo Pedido',fc2:'El Atelier',fc3:'Legal',lp:'Política de Privacidad',lt:'Términos de Uso',llg:'Protegido por la LGPD (Ley 13.709/2018).',fc4:'Idioma',fr:'Todos los derechos reservados.',fm:'Hecho a mano en las montañas de Brasil'},
-en:{a1:'✦ One-of-a-kind pieces handcrafted in the mountains of Brazil',a2:'✦ Gold · Sterling 950 · Filigree · Certified Natural Gemstones',a3:'✦ 50 years of artisan mastery · Inquire via WhatsApp',a4:'✦ Handmade Jewellery · Fine Artisan Jewels',nv1:'Collections',nv2:'Heritage',nv3:'Gemology',nv4:'Contact',nv5:'Atelier',nvb:'Blog',bi:'Inquire',he:'Cristal Bellísimo · Handmade Jewellery · Brazil',ht:'The Value of Nature',hs:'Handmade jewels that hold timeless stories',hb1:'Discover the Collection',hb2:'Meet the Master',hsc:'Discover',ty:'Years of Craft',th:'Handmade',ts:'Natural Stones',tu:'Unique Pieces',ac:'Chapter I · Heritage',at1:'Alma y Oficio:',at2:'The Maker\'s Hand',ab:'A family legacy forged in the mountains of Brazil, where metal is not merely matter — it is memory. Every curve, every facet, every edge that catches the light is a testament to ancestral technique refined through five decades of patient mastery.',as:'MMXXIV · Chronicles of the Atelier',spt:'Technical Methodology',spu:'Purity',spm:'Method',spmv:'Filigree · Lost-Wax Casting · Chasing',sph:'Dedication',sphv:'48h+ per piece',spo:'Origin',spov:'Mountains of Brazil',spg:'Gemstones',spgv:'100% Natural & Certified',smf:'We reject the efficiency of the machine in favor of the intentional imperfection of the human hand. Each piece is a unique dialogue between the artisan and the raw element.',cc:'Chapter II · Collections',ctt:'The Pieces',p1m:'Sterling 950 · Amethyst · Filigree',p1t:'Flower Amethyst Ring',p1d:'Botanical sculpture in sterling 950 with artisan filigree. Faceted pear amethyst hand-set among silver leaves.',p2m:'Sterling 950 · Amethyst · Filigree',p2t:'Amethyst Earrings',p2d:'Sculptural sterling 950 earrings. Fluid form inspired by flowing water, with oval amethyst set at the tip and filigree details.',p3m:'Sterling 950 · Garnet Marquise',p3t:'Garnet Ring',p3d:'Marquise-cut garnet set in sterling 950 with filigree arabesques. The fire-colored stone contrasts with the purity of silver.',p4m:'Sterling 950 · Turquoise · Coral',p4t:'Turquoise & Coral',p4d:'A sculptural design uniting sky-blue turquoise with vivid red coral. Delicate filigree throughout the structure.',p5m:'Sterling 950 · Aquamarine',p5t:'Aquamarine Ring',p5d:'Two Brazilian aquamarine stones in sterling 950, surrounded by filigree spirals. The color of the ocean captured in metal.',p6m:'Sterling 950 · Amethyst · Emerald',p6t:'Bird Ring',p6d:'Sculptural sterling 950 inspired by the hummingbird\'s flight. Oval amethyst and emerald hand-set in a figurative structure.',p7m:'Sterling 950 · Sapphire · Moonstone',p7t:'Field Flower',p7d:'A meeting of dark stone and the white light of moonstone. Naturalist design evoking the wildflowers of the mountains.',bip:'Inquire about this piece',ctc:'Chapter III · Technical Archive',cth:'Certificate of Origin',ce:'Certificate of Origin',ctt2:'The Heritage Collection',ca:'Cristal Bellísimo Atelier · Brazil',cm:'Metallurgy',cmv:'950 Fine Silver · 18k–24k Gold',cg:'Gemology',cgv:'Amethyst · Garnet · Turquoise\nCoral · Aquamarine · Sapphire',ck:'Technique',ckv:'Traditional Filigree\nLost-Wax Casting · Hand Polishing',cr:'Artisan',crv:'Master Goldsmith · Cristal Bellísimo',cq:'"We do not build jewelry; we refine the artifacts that nature left behind."',gc:'Chapter IV · Gemology',gt:'Know the Stones',gs:'We believe that understanding a stone is learning to love it.',gm:'Mohs Hardness',g1n:'Amethyst',g1o:'ORIGIN: Brazil · Uruguay · Zambia',g1d:'From Greek "not intoxicated". Pale violet to deep purple. Symbol of clarity and protection.',g2n:'Garnet',g2o:'ORIGIN: Brazil · India · Africa',g2d:'From Latin "granum". The ember-colored stone, symbol of passion, loyalty and vital energy.',g3n:'Turquoise',g3o:'ORIGIN: Iran · USA · Egypt',g3d:'5,000 years of history. Sacred to Native Americans and Egyptians. The eternal sky-blue.',g4n:'Aquamarine',g4o:'ORIGIN: Brazil · Minas Gerais',g4d:'From Latin "aqua marina". Brazil is the world\'s largest producer of the purest specimens.',g5n:'Coral',g5o:'ORIGIN: Mediterranean · Japan',g5d:'Living organic matter. Human adornment for 25,000 years. Symbol of protection.',g6n:'Moonstone',g6o:'ORIGIN: Sri Lanka · India',g6d:'The stone that captures moonlight within. Sacred in Hindu tradition. Unique adularescence.',gcta:'Inquire About Stone Availability',ctae:'Beyond Ornament',ctat:'Join the Legacy',ctab1:'Book a Private Consultation',ctab2:'Explore the Collection',ftg:'Artisan jewellery in the mountains of Brazil. Gold, silver, filigree and natural gemstones.',fc1:'Collections',f1:'Flower Amethyst Ring',f2:'Amethyst Earrings',f3:'Garnet Marquise',f4:'Turquoise & Coral',f5:'Aquamarine',f6:'Bespoke',fc2:'The Atelier',fc3:'Legal',lp:'Privacy Policy',lt:'Terms of Use',llg:'Protected under Brazilian Data Protection Law (LGPD).',fc4:'Language',fr:'All rights reserved.',fm:'Handmade in the mountains of Brazil'}
+pt:{nv1:'Coleções',nv2:'A Herança',nv3:'Gemologia',nv4:'Contato',nv5:'Ateliê',nvb:'Blog',bi:'Consultar',he:'Cristal Bellísimo · Handmade Jewellery · Brasil',ht:'El Valor de la Naturaleza',hs:'Joias artesanais que guardam histórias atemporais',hb1:'Descobrir a Coleção',hb2:'Conhecer o Mestre',hsc:'Descobrir',ty:'Anos de Ofício',th:'Artesanal',ts:'Pedras Naturais',tu:'Peças Únicas',ac:'Capítulo I · A Herança',at1:'Harmonia Lítica:',at2:'A Técnica do Mestre',ab:'Ele chama sua técnica de Harmonia Lítica — uma busca pelo equilíbrio entre pedra e metal que começou na infância, observando o trabalho da família num ateliê de prata e ouro, e que hoje ganha forma num pequeno ateliê sobre uma colina, entre a floresta, o rio e o céu estrelado.',as:'MMXXIV · Crônicas do Ateliê',spt:'Metodologia Técnica',spu:'Pureza',spm:'Método',spmv:'Filigrana · Granulação · Engaste à Mão',sph:'Dedicação',sphv:'Dias ou semanas por peça',spo:'Origem',spov:'Colina, Floresta e Rio',spg:'Pedras',spgv:'100% Naturais e Certificadas',cc:'Capítulo II · Coleções',ctt:'As Peças',bip:'Consultar esta peça',ctc:'Capítulo III · Archivo Técnico',cth:'Certificado de Origem',ce:'Certificado de Origem',ctt2:'A Coleção Herança',ca:'Cristal Bellísimo Ateliê · Brasil',cm:'Metalurgia',cmv:'Prata Fina · Ouro · Platina',cg:'Gemologia',cgv:'Ametista · Granate · Turquesa\nCoral · Água-Marinha · Safira',ck:'Técnica',ckv:'Filigrana Tradicional\nGranulação · Engaste à Mão',cr:'Artesão',crv:'Mestre Ourives · Cristal Bellísimo',cq:'"A pedra precisa ser natural."',gc:'Capítulo IV · Gemologia',gt:'Conheça as Pedras',gs:'Acreditamos que entender uma pedra é aprender a amá-la.',gm:'Dureza Mohs',g1n:'Ametista',g1o:'ORIGEM: Brasil · Uruguai · Zâmbia',g1d:'Do grego "não embriagado". Violeta pálido ao roxo profundo. Símbolo de clareza e proteção.',g2n:'Granate',g2o:'ORIGEM: Brasil · Índia · África',g2d:'Do latim "granum". A pedra cor de brasa, símbolo de paixão, lealdade e energia vital.',g3n:'Turquesa',g3o:'ORIGEM: Irã · EUA · Egito',g3d:'5.000 anos de história. Sagrada para os nativos americanos e egípcios. O azul-céu eterno.',g4n:'Água-Marinha',g4o:'ORIGEM: Brasil · Minas Gerais',g4d:'Do latim "aqua marina". Brasil, maior produtor mundial das mais puras. A cor do oceano.',g5n:'Coral',g5o:'ORIGEM: Mediterrâneo · Japão',g5d:'Matéria orgânica viva. Adorno humano há 25.000 anos. Símbolo de proteção.',g6n:'Pedra da Lua',g6o:'ORIGEM: Sri Lanka · Índia',g6d:'A pedra que captura a luz da lua em seu interior. Sagrada na tradição hindu.',gcta:'Consultar Pedras Disponíveis',ctat:'Junte-se ao Legado',ctab1:'Agendar Consulta Privada',ctab2:'Explorar a Coleção',ftg:'Joalheria artesanal sobre uma colina, entre a floresta e o rio. Ouro, prata, filigrana e pedras naturais.',fc1:'Coleções',f6:'Sob Encomenda',fc2:'O Ateliê',fc3:'Legal',lp:'Política de Privacidade',lt:'Termos de Uso',llg:'Protegido pela LGPD (Lei 13.709/2018).',fc4:'Idioma',fr:'Todos os direitos reservados.',fm:'Feito à mão sobre uma colina, entre a floresta e o rio'},
+es:{nv1:'Colecciones',nv2:'La Herencia',nv3:'Gemología',nv4:'Contacto',nv5:'Atelier',nvb:'Blog',bi:'Consultar',he:'Cristal Bellísimo · Handmade Jewellery · Brasil',ht:'El Valor de la Naturaleza',hs:'Joyas artesanales que guardan historias atemporales',hb1:'Descubrir la Colección',hb2:'Conocer al Maestro',hsc:'Descubrir',ty:'Años de Oficio',th:'Artesanal',ts:'Piedras Naturales',tu:'Piezas Únicas',ac:'Capítulo I · La Herencia',at1:'Harmonía Lítica:',at2:'La Técnica del Maestro',ab:'Él llama a su técnica Harmonía Lítica — una búsqueda del equilibrio entre piedra y metal que comenzó en la infancia, observando el trabajo de la familia en un taller de plata y oro, y que hoy toma forma en un pequeño taller sobre una colina, entre el bosque, el río y el cielo estrellado.',as:'MMXXIV · Crónicas del Atelier',spt:'Metodología Técnica',spu:'Pureza',spm:'Método',spmv:'Filigrana · Granulación · Engaste a Mano',sph:'Dedicación',sphv:'Días o semanas por pieza',spo:'Origen',spov:'Colina, Bosque y Río',spg:'Piedras',spgv:'100% Naturales y Certificadas',cc:'Capítulo II · Colecciones',ctt:'Las Piezas',bip:'Consultar esta pieza',ctc:'Capítulo III · Archivo Técnico',cth:'Certificado de Origen',ce:'Certificado de Origen',ctt2:'La Colección Herencia',ca:'Cristal Bellísimo Atelier · Brasil',cm:'Metalurgia',cmv:'Plata Fina · Oro · Platino',cg:'Gemología',cgv:'Amatista · Granate · Turquesa\nCoral · Agua Marina · Zafiro',ck:'Técnica',ckv:'Filigrana Tradicional\nGranulación · Engaste a Mano',cr:'Artesano',crv:'Maestro Orfebre · Cristal Bellísimo',cq:'"La piedra debe ser natural."',gc:'Capítulo IV · Gemología',gt:'Conozca las Piedras',gs:'Creemos que entender una piedra es aprender a amarla.',gm:'Dureza Mohs',g1n:'Amatista',g1o:'ORIGEN: Brasil · Uruguay · Zambia',g1d:'Del griego "no embriagado". Violeta pálido al púrpura profundo. Símbolo de claridad y protección.',g2n:'Granate',g2o:'ORIGEN: Brasil · India · África',g2d:'Del latín "granum". La piedra color brasa, símbolo de pasión, lealtad y energía vital.',g3n:'Turquesa',g3o:'ORIGEN: Irán · EE.UU. · Egipto',g3d:'5.000 años de historia. Sagrada para los nativos americanos y egipcios. El azul-cielo eterno.',g4n:'Agua Marina',g4o:'ORIGEN: Brasil · Minas Gerais',g4d:'Del latín "aqua marina". Brasil, mayor productor mundial. El color del océano.',g5n:'Coral',g5o:'ORIGEN: Mediterráneo · Japón',g5d:'Materia orgánica viva. Adorno humano hace 25.000 años. Símbolo de protección.',g6n:'Piedra de Luna',g6o:'ORIGEN: Sri Lanka · India',g6d:'La piedra que captura la luz de la luna en su interior. Sagrada en la tradición hindú.',gcta:'Consultar Piedras Disponibles',ctat:'Únase al Legado',ctab1:'Agendar Consulta Privada',ctab2:'Explorar la Colección',ftg:'Joyería artesanal sobre una colina, entre el bosque y el río. Oro, plata, filigrana y piedras naturales.',fc1:'Colecciones',f6:'Bajo Pedido',fc2:'El Atelier',fc3:'Legal',lp:'Política de Privacidad',lt:'Términos de Uso',llg:'Protegido por la LGPD (Ley 13.709/2018).',fc4:'Idioma',fr:'Todos los derechos reservados.',fm:'Hecho a mano sobre una colina, entre el bosque y el río'},
+en:{nv1:'Collections',nv2:'Heritage',nv3:'Gemology',nv4:'Contact',nv5:'Atelier',nvb:'Blog',bi:'Inquire',he:'Cristal Bellísimo · Handmade Jewellery · Brazil',ht:'The Value of Nature',hs:'Handmade jewels that hold timeless stories',hb1:'Discover the Collection',hb2:'Meet the Master',hsc:'Discover',ty:'Years of Craft',th:'Handmade',ts:'Natural Stones',tu:'Unique Pieces',ac:'Chapter I · Heritage',at1:'Lithic Harmony:',at2:'The Master\'s Technique',ab:'He calls his technique Lithic Harmony — a search for balance between stone and metal that began in childhood, watching his family\'s work in a silver and gold workshop, and that today takes shape in a small atelier on a hillside, among the forest, the river and the starlit sky.',as:'MMXXIV · Chronicles of the Atelier',spt:'Technical Methodology',spu:'Purity',spm:'Method',spmv:'Filigree · Granulation · Hand-Setting',sph:'Dedication',sphv:'Days or weeks per piece',spo:'Origin',spov:'Hillside, Forest and River',spg:'Gemstones',spgv:'100% Natural & Certified',cc:'Chapter II · Collections',ctt:'The Pieces',bip:'Inquire about this piece',ctc:'Chapter III · Technical Archive',cth:'Certificate of Origin',ce:'Certificate of Origin',ctt2:'The Heritage Collection',ca:'Cristal Bellísimo Atelier · Brazil',cm:'Metallurgy',cmv:'Fine Silver · Gold · Platinum',cg:'Gemology',cgv:'Amethyst · Garnet · Turquoise\nCoral · Aquamarine · Sapphire',ck:'Technique',ckv:'Traditional Filigree\nGranulation · Hand-Set',cr:'Artisan',crv:'Master Goldsmith · Cristal Bellísimo',cq:'"The stone must be natural."',gc:'Chapter IV · Gemology',gt:'Know the Stones',gs:'We believe that understanding a stone is learning to love it.',gm:'Mohs Hardness',g1n:'Amethyst',g1o:'ORIGIN: Brazil · Uruguay · Zambia',g1d:'From Greek "not intoxicated". Pale violet to deep purple. Symbol of clarity and protection.',g2n:'Garnet',g2o:'ORIGIN: Brazil · India · Africa',g2d:'From Latin "granum". The ember-colored stone, symbol of passion, loyalty and vital energy.',g3n:'Turquoise',g3o:'ORIGIN: Iran · USA · Egypt',g3d:'5,000 years of history. Sacred to Native Americans and Egyptians. The eternal sky-blue.',g4n:'Aquamarine',g4o:'ORIGIN: Brazil · Minas Gerais',g4d:'From Latin "aqua marina". Brazil is the world\'s largest producer of the purest specimens.',g5n:'Coral',g5o:'ORIGIN: Mediterranean · Japan',g5d:'Living organic matter. Human adornment for 25,000 years. Symbol of protection.',g6n:'Moonstone',g6o:'ORIGIN: Sri Lanka · India',g6d:'The stone that captures moonlight within. Sacred in Hindu tradition. Unique adularescence.',gcta:'Inquire About Stone Availability',ctat:'Join the Legacy',ctab1:'Book a Private Consultation',ctab2:'Explore the Collection',ftg:'Artisan jewellery on a hillside, among the forest and the river. Gold, silver, filigree and natural gemstones.',fc1:'Collections',f6:'Bespoke',fc2:'The Atelier',fc3:'Legal',lp:'Privacy Policy',lt:'Terms of Use',llg:'Protected under Brazilian Data Protection Law (LGPD).',fc4:'Language',fr:'All rights reserved.',fm:'Handmade on a hillside, among the forest and the river'}
 };
 
 /* ── fade-in (IntersectionObserver) ── */
@@ -442,27 +423,60 @@ function obsFI(root){(root||document).querySelectorAll('.fi').forEach(e=>io.obse
    CATÁLOGO DINÂMICO — lê o conteúdo de catalogo.js (window.SITE)
    ══════════════════════════════════════════════════════════════════ */
 const WA='https://wa.me/5562994503554';
+/* Mensagens gerais do WhatsApp — chegam já no idioma que o visitante está usando no site.
+   Para mudar um texto, é só editar aqui. */
+const WAGERAL={
+  geral:{pt:'Olá! Vim pelo site da Cristal Bellísimo e gostaria de ser atendido(a) em português.',
+         es:'¡Hola! Vengo del sitio de Cristal Bellísimo y me gustaría ser atendido(a) en español.',
+         en:'Hello! I found Cristal Bellísimo through the website and would like to be assisted in English.',
+         fr:'Bonjour ! Je viens du site de Cristal Bellísimo et je souhaiterais être servi(e) en français.'},
+  pedras:{pt:'Olá! Vim pelo site e gostaria de saber quais pedras estão disponíveis.',
+          es:'¡Hola! Vengo del sitio y me gustaría saber qué piedras están disponibles.',
+          en:'Hello! I came from the website and would like to know which stones are available.',
+          fr:'Bonjour ! Je viens du site et j\'aimerais savoir quelles pierres sont disponibles.'},
+  consulta:{pt:'Olá! Vim pelo site e gostaria de agendar uma consulta.',
+            es:'¡Hola! Vengo del sitio y me gustaría agendar una consulta.',
+            en:'Hello! I came from the website and would like to book a consultation.',
+            fr:'Bonjour ! Je viens du site et je souhaiterais prendre rendez-vous.'},
+  encomenda:{pt:'Olá! Vim pelo site e gostaria de encomendar uma peça exclusiva.',
+             es:'¡Hola! Vengo del sitio y me gustaría encargar una pieza exclusiva.',
+             en:'Hello! I came from the website and would like to commission a one-of-a-kind piece.',
+             fr:'Bonjour ! Je viens du site et je souhaiterais commander une pièce unique.'}
+};
+function atualizarWA(lang){
+  document.querySelectorAll('a[data-wa]').forEach(a=>{
+    const m=WAGERAL[a.dataset.wa]; if(!m) return;
+    a.href=WA+'?text='+encodeURIComponent(m[lang]||m.pt);
+  });
+}
+function renderRodape(lang){
+  const box=document.getElementById('fPecas');
+  if(!box||!window.SITE||!Array.isArray(SITE.pecas)) return;
+  box.innerHTML=SITE.pecas.map(p=>`<a href="#colecoes" class="fl">${esc(txOf(p,lang).titulo)}</a>`).join('');
+}
 const WAMSG={pt:t=>`Olá! Tenho interesse na peça ${t}.`,es:t=>`¡Hola! Me interesa la pieza ${t}.`,en:t=>`Hello! I'm interested in the ${t} piece.`};
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function waLink(lang,titulo){return WA+'?text='+encodeURIComponent((WAMSG[lang]||WAMSG.pt)(titulo));}
 function txOf(o,lang){return o[lang]||o.pt||o.en||o.es||{meta:'',titulo:'',desc:''};}
 
-function mainMedia(p){
+function mainMedia(p,tx){
   const h=p.destaque?' style="height:420px"':'';
-  return `<img src="${esc(p.fotos&&p.fotos[0]||'')}" alt="" loading="lazy"${h}>`;
+  const alt=esc((tx&&tx.titulo)||'')+(tx&&tx.meta?' — '+esc(tx.meta):'');
+  return `<img src="${esc(p.fotos&&p.fotos[0]||'')}" alt="${alt}" loading="lazy"${h}>`;
 }
-function stripThumbs(p,slot){
+function stripThumbs(p,slot,tx){
   let html='';
+  const t=esc((tx&&tx.titulo)||'');
   (p.fotos||[]).forEach((f,i)=>{
-    html+=`<img src="${esc(f)}" ${i===0?'class="on" ':''}onclick="setFoto(${slot},'${esc(f)}',this)" alt="" loading="lazy">`;
+    html+=`<img src="${esc(f)}" ${i===0?'class="on" ':''}onclick="setFoto(${slot},'${esc(f)}',this,'${t}')" alt="${t} — foto ${i+1}" loading="lazy">`;
   });
-  if(p.video){html+=`<span class="gvid" onclick="setVid(${slot},'${esc(p.video)}',this)" title="Vídeo">&#9654;</span>`;}
+  if(p.video){html+=`<span class="gvid" onclick="setVid(${slot},'${esc(p.video)}',this)" title="Vídeo" role="button" tabindex="0" aria-label="Ver vídeo">&#9654;</span>`;}
   return html;
 }
-function setFoto(slot,src,el){
+function setFoto(slot,src,el,alt){
   const s=document.getElementById('slot-'+slot);if(!s)return;
   const h=s.getAttribute('data-h');
-  s.innerHTML=`<img src="${src}" alt="" loading="lazy"${h?` style="height:${h}px"`:''}>`;
+  s.innerHTML=`<img src="${src}" alt="${alt||''}" loading="lazy"${h?` style="height:${h}px"`:''}>`;
   el.closest('.gstrip').querySelectorAll('img,.gvid').forEach(i=>i.classList.remove('on'));el.classList.add('on');
 }
 function setVid(slot,src,el){
@@ -475,12 +489,12 @@ function cardHTML(p,lang,idx,delay,centered){
   const tx=txOf(p,lang);
   const cs=centered?' style="flex:0 1 420px;max-width:100%"':'';
   return `<div class="card fi${delay?' '+delay:''}"${cs}>
-    <div class="card-img" id="slot-${idx}" data-h="${p.destaque?420:''}">${mainMedia(p)}</div>
+    <div class="card-img" id="slot-${idx}" data-h="${p.destaque?420:''}">${mainMedia(p,tx)}</div>
     <div class="card-info">
       <p class="card-meta">${esc(tx.meta)}</p>
       <h3 class="card-title">${esc(tx.titulo)}</h3>
       <p class="card-desc">${esc(tx.desc)}</p>
-      <div class="gstrip">${stripThumbs(p,idx)}</div>
+      <div class="gstrip">${stripThumbs(p,idx,tx)}</div>
       <a href="${waLink(lang,tx.titulo)}" target="_blank" rel="noopener" class="btn btn-gh" style="margin-top:16px;font-size:10px;padding:9px 18px;">${esc(txUI(lang,'bip'))}</a>
     </div>
   </div>`;
@@ -524,12 +538,13 @@ function renderCatalogo(lang){
 function isVideo(src){return /\.(mp4|webm|mov|m4v|ogg)$/i.test(src||'');}
 window.ATELIE_FOTOS=[];
 function renderAtelie(lang){
-  const sec=document.getElementById('atelie'), nav=document.getElementById('navAtelie');
+  const sec=document.getElementById('atelie'), nav=document.getElementById('navAtelie'), mnavAt=document.getElementById('mnavAtelie');
   const a=window.SITE?SITE.atelie:null;
   const itens=(a&&Array.isArray(a.itens))?a.itens:[];
   const has=!!a&&itens.length>0;
   if(sec)sec.style.display=has?'':'none';
   if(nav)nav.style.display=has?'':'none';
+  if(mnavAt)mnavAt.style.display=has?'':'none';
   if(!has)return;
   const tx=a[lang]||a.pt||{};
   const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v||'';};
@@ -553,19 +568,76 @@ function renderFixas(){
   Object.keys(map).forEach(id=>{const el=document.getElementById(id),src=SITE.imagens[map[id]];if(el&&src)el.src=src;});
 }
 
+/* ══════════════════════════════════════════════════════════════════
+   IDIOMAS — para acrescentar o FRANCÊS no futuro, basta:
+     1) adicionar os textos em  T  (lá em cima, bloco  fr:{...} )
+     2) acrescentar UMA linha aqui:  {c:'fr',curto:'FR',nome:'Français',html:'fr'}
+   O seletor, o menu e o atributo lang da página se ajustam sozinhos.
+   ══════════════════════════════════════════════════════════════════ */
+const IDIOMAS=[
+  {c:'pt',curto:'PT',nome:'Português',html:'pt-BR'},
+  {c:'es',curto:'ES',nome:'Español', html:'es'},
+  {c:'en',curto:'EN',nome:'English',  html:'en'}
+];
+const DISP=IDIOMAS.filter(i=>T[i.c]);  /* só mostra idioma que realmente tem tradução */
+
 /* ── i18n / troca de idioma ── */
 function L(l){
   const d=T[l];if(!d)return;
+  const inf=DISP.find(i=>i.c===l)||DISP[0];
   document.documentElement.setAttribute('data-lang',l);
-  document.documentElement.lang=l==='pt'?'pt-BR':l==='es'?'es':'en';
+  document.documentElement.lang=inf.html;
   document.querySelectorAll('[data-i18n]').forEach(e=>{const k=e.getAttribute('data-i18n');if(d[k]!==undefined)e.textContent=d[k];});
-  ['pt','es','en'].forEach(x=>{const b=document.getElementById('b'+x);if(b)b.classList.toggle('on',x===l);});
+  const cur=document.getElementById('langCur');if(cur)cur.textContent=inf.curto;
+  document.querySelectorAll('#langMenu li').forEach(li=>li.setAttribute('aria-selected',li.dataset.l===l?'true':'false'));
+  document.querySelectorAll('#flang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
   renderCatalogo(l);
   renderAtelie(l);
+  atualizarWA(l);
+  renderRodape(l);
   localStorage.setItem('cb_l',l);
 }
+
+/* ── seletor de idioma: monta o menu e controla abertura ── */
+const lang=document.getElementById('lang'),langBtn=document.getElementById('langBtn'),langMenu=document.getElementById('langMenu');
+langMenu.innerHTML=DISP.map(i=>`<li role="option" data-l="${i.c}" tabindex="-1" aria-selected="false">${i.nome}</li>`).join('');
+function langAbrir(v){lang.classList.toggle('on',v);langBtn.setAttribute('aria-expanded',v?'true':'false');
+  /* no desktop o ponteiro continua sobre o menu depois de escolher; 'travado' impede que o
+     :hover reabra sozinho — destrava assim que o ponteiro sai do seletor */
+  if(!v)lang.classList.add('travado');}
+lang.addEventListener('mouseleave',()=>lang.classList.remove('travado'));
+langBtn.addEventListener('click',e=>{e.stopPropagation();langAbrir(!lang.classList.contains('on'));});
+langMenu.addEventListener('click',e=>{const li=e.target.closest('li');if(!li)return;L(li.dataset.l);langAbrir(false);langBtn.focus();});
+langMenu.addEventListener('keydown',e=>{
+  const itens=[...langMenu.querySelectorAll('li')],i=itens.indexOf(document.activeElement);
+  if(e.key==='Enter'||e.key===' '){e.preventDefault();if(i>=0){L(itens[i].dataset.l);langAbrir(false);langBtn.focus();}}
+  if(e.key==='ArrowDown'){e.preventDefault();(itens[i+1]||itens[0]).focus();}
+  if(e.key==='ArrowUp'){e.preventDefault();(itens[i-1]||itens[itens.length-1]).focus();}
+});
+langBtn.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();langAbrir(true);
+  /* espera o menu ficar realmente visível — um elemento com visibility:hidden não aceita foco */
+  requestAnimationFrame(()=>{const p=langMenu.querySelector('li');if(p)p.focus();});}});
+document.addEventListener('click',()=>langAbrir(false));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lang.classList.contains('on')){langAbrir(false);langBtn.focus();}});
+
+/* ── lista de idiomas do rodapé (mesma fonte IDIOMAS) ── */
+const flang=document.getElementById('flang');
+if(flang){
+  flang.innerHTML=DISP.map(i=>`<button type="button" data-l="${i.c}" lang="${i.html}">${i.curto}</button>`).join('<span class="d">·</span>');
+  flang.addEventListener('click',e=>{const b=e.target.closest('button');if(b)L(b.dataset.l);});
+}
+
+/* ── menu do celular ── */
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+function mnavAbrir(v){mnav.classList.toggle('on',v);burger.setAttribute('aria-expanded',v?'true':'false');}
+burger.addEventListener('click',e=>{e.stopPropagation();mnavAbrir(!mnav.classList.contains('on'));});
+mnav.addEventListener('click',e=>{if(e.target.tagName==='A')mnavAbrir(false);});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')mnavAbrir(false);});
+
 renderFixas();
-(function(){const s=localStorage.getItem('cb_l'),br=navigator.language.slice(0,2),m={pt:'pt',es:'es',en:'en'};L(s||m[br]||'pt');})();
+(function(){const s=localStorage.getItem('cb_l'),br=navigator.language.slice(0,2);
+ const ok=c=>DISP.some(i=>i.c===c);
+ L(ok(s)?s:(ok(br)?br:'pt'));})();
 obsFI();
 
 /* header scroll */
@@ -573,12 +645,37 @@ const hdr=document.getElementById('hdr');
 window.addEventListener('scroll',()=>hdr.classList.toggle('up',scrollY>48),{passive:true});
 
 /* lightbox */
-let LBI=[],LBX=0;
-function olb(s,imgs){LBI=imgs||[s];LBX=LBI.indexOf(s);if(LBX<0)LBX=0;document.getElementById('lbi').src=LBI[LBX];document.getElementById('lb').classList.add('on');document.body.style.overflow='hidden';}
-function clb(){document.getElementById('lb').classList.remove('on');document.body.style.overflow='';}
+let LBI=[],LBX=0,LBANT=null;
+function olb(s,imgs){
+  LBI=imgs||[s];LBX=LBI.indexOf(s);if(LBX<0)LBX=0;
+  LBANT=document.activeElement;               /* guarda de onde veio, para devolver o foco ao fechar */
+  document.getElementById('lbi').src=LBI[LBX];
+  document.getElementById('lb').classList.add('on');
+  document.body.style.overflow='hidden';
+  document.querySelector('.lb-x').focus();
+}
+function clb(){
+  const lb=document.getElementById('lb');
+  if(!lb.classList.contains('on'))return;
+  lb.classList.remove('on');document.body.style.overflow='';
+  if(LBANT&&LBANT.focus)LBANT.focus();LBANT=null;
+}
 function nlb(d){LBX=(LBX+d+LBI.length)%LBI.length;document.getElementById('lbi').src=LBI[LBX];}
 document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)clb();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')clb();if(e.key==='ArrowLeft')nlb(-1);if(e.key==='ArrowRight')nlb(1);});
+document.addEventListener('keydown',e=>{
+  const aberto=document.getElementById('lb').classList.contains('on');
+  if(e.key==='Escape')clb();
+  if(!aberto)return;
+  if(e.key==='ArrowLeft')nlb(-1);
+  if(e.key==='ArrowRight')nlb(1);
+  /* prende o foco dentro do lightbox enquanto ele estiver aberto */
+  if(e.key==='Tab'){
+    const f=[...document.querySelectorAll('#lb button')];
+    const i=f.indexOf(document.activeElement);
+    e.preventDefault();
+    (e.shiftKey?(f[i-1]||f[f.length-1]):(f[i+1]||f[0])).focus();
+  }
+});
 
 /* image protection */
 document.addEventListener('contextmenu',e=>{if(e.target.tagName==='IMG')e.preventDefault();});
