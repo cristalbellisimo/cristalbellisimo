@@ -37,6 +37,9 @@
     .corpo-h{font-family:'Libre Caslon Text',serif;font-size:22px;font-weight:400;color:var(--p);margin:36px 0 14px}
     .corpo-q{font-family:'Libre Caslon Text',serif;font-style:italic;font-size:20px;color:var(--gd);
       border-left:2px solid var(--gd);padding-left:20px;margin:28px 0}
+    .corpo-fig{margin:32px 0}
+    .corpo-fig img,.corpo-fig video{width:100%;height:auto;max-height:560px;object-fit:cover}
+    .corpo-fig figcaption{font-size:12px;font-style:italic;color:rgba(2,34,124,.6);margin-top:8px;text-align:center}
     .galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-top:36px}
     .galeria img,.galeria video{width:100%;height:220px;object-fit:cover}
     @media(max-width:600px){.galeria{grid-template-columns:1fr}}
@@ -108,6 +111,14 @@ function corpoHTML(paragrafos){
     if(typeof p!=='string') return '';
     if(p.startsWith('## ')) return `<h3 class="corpo-h">${esc(p.slice(3))}</h3>`;
     if(p.startsWith('> ')) return `<blockquote class="corpo-q">${esc(p.slice(2))}</blockquote>`;
+    if(p.startsWith('@ ')){
+      /* foto ou vídeo entre os parágrafos:  "@ images/blog/foto.jpg | legenda opcional" */
+      const partes=p.slice(2).split('|'), src=partes[0].trim(), leg=(partes[1]||'').trim();
+      const midia=isVideo(src)
+        ? `<video src="${esc(src)}" controls playsinline preload="metadata"></video>`
+        : `<img src="${esc(src)}" alt="${esc(leg)}" loading="lazy">`;
+      return `<figure class="corpo-fig">${midia}${leg?`<figcaption>${esc(leg)}</figcaption>`:''}</figure>`;
+    }
     return `<p>${esc(p)}</p>`;
   }).join('');
 }
