@@ -16,15 +16,14 @@
 
 /* ── CORES E MEDIDAS DA MARCA ─────────────────────────────────────────────── */
 :root{
-  --p:#02227c;        /* azul-marinho — cor principal, texto e fundos escuros */
+  --p:#a4513b;        /* terracota — cor principal, texto e fundos escuros */
   --g:var(--p);       /* mesma cor do texto, para uso sobre fundo CLARO */
-  --gd:#ffffff;       /* branco — para uso sobre fundo ESCURO/azul-marinho
-                         (senão o azul-marinho ficaria ilegível sobre azul-marinho) */
-  --s:#ffffff;        /* fundo principal */
-  --sc:#f2ede4;       /* fundo areia, das seções alternadas */
-  --sh:#dde6f0;       /* azul muito claro, usado em barras e trilhos */
-  --il:#02227c;       /* texto secundário */
-  --b:rgba(2,34,124,.2); /* linhas e bordas */
+  --gd:#fffaf4;       /* marfim — para uso sobre fundo terracota */
+  --s:#fffaf4;        /* fundo principal */
+  --sc:#f2e3d8;       /* fundo rosado, das seções alternadas */
+  --sh:#e7c7b6;       /* terracota claro, usado em barras e trilhos */
+  --il:#7f3b2e;       /* texto secundário */
+  --b:rgba(164,81,59,.22); /* linhas e bordas */
 }
 
 /* ── BASE ─────────────────────────────────────────────────────────────────── */
