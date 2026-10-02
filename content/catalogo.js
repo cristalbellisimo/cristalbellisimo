@@ -71,22 +71,30 @@ window.SITE = {
             desc: "Citrino oval facetado engastado en plata 950. La hoja esculpida dibuja un movimiento elíptico y espirales de filigrana — una forma lítica en equilibrio cósmico, modelada enteramente a mano." },
       en: { meta: "Sterling 950 · Citrine · Filigree", titulo: "Citrine Ring",
             desc: "Faceted oval citrine set in sterling 950. The sculpted leaf traces an elliptical movement and filigree spirals — a lithic form in cosmic balance, shaped entirely by hand." }
-    }
-
-    /* 👆 PARA UMA PEÇA NOVA: ponha uma vírgula depois do } acima e cole aqui o
-       bloco copiado. Exemplo já pronto (basta tirar a barra e os asteriscos):
-
-    ,{
+    },
+    {
       codigo: "CB-0002",
-      fotos: ["images/pecas/CB-0002-01.jpg", "images/pecas/CB-0002-02.jpg"],
+      fotos: [
+        "images/pecas/CB-0002-01.jpg"
+      ],
       video: "",
       destaque: false,
-      pt: { meta: "Prata 950 · Esmeralda", titulo: "Anel Esmeralda", desc: "Descrição em português." },
-      es: { meta: "Plata 950 · Esmeralda", titulo: "Anillo Esmeralda", desc: "Descripción en español." },
-      en: { meta: "Sterling 950 · Emerald", titulo: "Emerald Ring", desc: "Description in English." }
+      pt: {
+        meta: "Prata 950 · Água-Marinha",
+        titulo: "Anel Água-Marinha",
+        desc: "Anel em prata 950 com pedra de água-marinha, em acabamento artesanal e desenho delicado que valoriza a sua cor e luminosidade."
+      },
+      es: {
+        meta: "Plata 950 · Aguamarina",
+        titulo: "Anillo Aguamarina",
+        desc: "Anillo en plata 950 con piedra de aguamarina, en acabado artesanal y diseño delicado que valora su color y luminosidad."
+      },
+      en: {
+        meta: "Sterling 950 · Aquamarine",
+        titulo: "Aquamarine Ring",
+        desc: "Sterling 950 ring with aquamarine stone, featuring handcrafted finishing and a delicate design that enhances its color and luminosity."
+      }
     }
-    */
-
   ],
 
   /* ==========================================================================
