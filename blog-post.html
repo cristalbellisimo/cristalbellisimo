@@ -29,17 +29,23 @@
     @media(max-width:768px){.capa{padding:0 20px}}
     .capa img,.capa video{width:100%;height:440px;object-fit:cover;margin-top:32px}
     @media(max-width:700px){.capa img,.capa video{height:280px}}
+    .capa-vazia{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+      height:440px;margin-top:32px;padding:32px;background:var(--p);color:var(--s);text-align:center}
+    .capa-vazia::before{content:'';position:absolute;inset:18px;border:1px solid rgba(var(--gold-rgb),.55)}
+    .capa-vazia .label{color:var(--gd)}
+    .capa-vazia .serif{font-size:clamp(28px,5vw,48px);color:var(--s)}
+    @media(max-width:700px){.capa-vazia{height:280px;padding:24px}}
 
     article{padding:40px 0 100px}
     .post-data{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--il);margin-bottom:14px}
     h1{font-family:'Libre Caslon Text',serif;font-size:clamp(28px,5vw,44px);font-weight:400;line-height:1.15;margin-bottom:28px}
-    .corpo p{font-size:16px;line-height:1.9;color:rgba(2,34,124,.82);margin-bottom:20px}
-    .corpo-h{font-family:'Libre Caslon Text',serif;font-size:22px;font-weight:400;color:var(--p);margin:36px 0 14px}
-    .corpo-q{font-family:'Libre Caslon Text',serif;font-style:italic;font-size:20px;color:var(--gd);
-      border-left:2px solid var(--gd);padding-left:20px;margin:28px 0}
+    .corpo p{font-size:16px;line-height:1.9;color:var(--ink);margin-bottom:20px}
+    .corpo-h{font-family:'Libre Caslon Text',serif;font-size:22px;font-weight:400;color:var(--g);margin:36px 0 14px}
+    .corpo-q{font-family:'Libre Caslon Text',serif;font-style:italic;font-size:20px;color:var(--g);
+      border-left:2px solid var(--g);padding-left:20px;margin:28px 0}
     .corpo-fig{margin:32px 0}
     .corpo-fig img,.corpo-fig video{width:100%;height:auto;max-height:560px;object-fit:cover}
-    .corpo-fig figcaption{font-size:12px;font-style:italic;color:rgba(2,34,124,.6);margin-top:8px;text-align:center}
+    .corpo-fig figcaption{font-size:12px;font-style:italic;color:var(--il);margin-top:8px;text-align:center}
     .galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-top:36px}
     .galeria img,.galeria video{width:100%;height:220px;object-fit:cover}
     @media(max-width:600px){.galeria{grid-template-columns:1fr}}
@@ -48,7 +54,7 @@
     .naoEncontrado{padding:120px 0;text-align:center}
 
     .ftr{background:var(--p);color:var(--s);padding:48px 0;text-align:center;margin-top:40px}
-    .ftr a{font-size:12px;color:rgba(254,249,240,.5);margin:0 10px}
+    .ftr a{font-size:12px;color:rgba(var(--light-rgb),.7);margin:0 10px}
     .ftr a:hover{color:var(--s)}
 
   </style>
@@ -93,9 +99,9 @@
 <script src="content/blog.js"></script>
 <script>
 const TP = {
-  pt: { back:'← Blog', naoEnc:'Artigo não encontrado.', voltar:'Voltar ao Blog', outrasHistorias:'Outras Histórias do Ateliê' },
-  es: { back:'← Blog', naoEnc:'Artículo no encontrado.', voltar:'Volver al Blog', outrasHistorias:'Otras Historias del Atelier' },
-  en: { back:'← Blog', naoEnc:'Article not found.', voltar:'Back to Blog', outrasHistorias:'More Stories from the Atelier' }
+  pt: { back:'← Blog', naoEnc:'Artigo não encontrado.', voltar:'Voltar ao Blog', outrasHistorias:'Outras Histórias do Ateliê', fotoPendente:'Espaço reservado para a foto de capa' },
+  es: { back:'← Blog', naoEnc:'Artículo no encontrado.', voltar:'Volver al Blog', outrasHistorias:'Otras Historias del Atelier', fotoPendente:'Espacio reservado para la foto de portada' },
+  en: { back:'← Blog', naoEnc:'Article not found.', voltar:'Back to Blog', outrasHistorias:'More Stories from the Atelier', fotoPendente:'Cover photo placeholder' }
 };
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function isVideo(src){return /\.(mp4|webm|mov|m4v|ogg)$/i.test(src||'');}
@@ -129,7 +135,7 @@ function galeriaHTML(itens){
     return isVideo(src) ? `<video src="${esc(src)}" controls playsinline preload="metadata"></video>` : `<img src="${esc(src)}" alt="" loading="lazy">`;
   }).join('')}</div>`;
 }
-/* IDIOMAS — acrescentar o francês aqui e em TP/blog.js quando as traduções existirem */
+/* Idiomas do seletor deste artigo; os textos do artigo ficam em content/blog.js. */
 const IDIOMAS=[
   {c:'pt',curto:'PT',nome:'Português',html:'pt-BR'},
   {c:'es',curto:'ES',nome:'Español', html:'es'},
@@ -176,7 +182,7 @@ function render(){
   const capaWrap=document.getElementById('capaWrap');
   capaWrap.innerHTML = post.capaVideo
     ? `<video src="${esc(post.capaVideo)}" controls playsinline></video>`
-    : (post.capa ? `<img src="${esc(post.capa)}" alt="${esc(tx.titulo)}">` : '');
+    : (post.capa ? `<img src="${esc(post.capa)}" alt="${esc(tx.titulo)}">` : `<div class="capa-vazia" role="img" aria-label="${esc(tp.fotoPendente)} — ${esc(tx.titulo)}"><span class="label">${esc(tp.fotoPendente)}</span><span class="serif">${esc(tx.titulo)}</span></div>`);
 
   document.getElementById('conteudo').innerHTML = `
     <p class="post-data">${fmtData(post.data,lang)}</p>

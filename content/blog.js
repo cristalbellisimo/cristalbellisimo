@@ -14,9 +14,9 @@
      slug:      um "nome-de-url" curto, sem espaços/acentos (ex.: "novo-anel-esmeralda").
                 É o que aparece no endereço: blog-post.html?slug=novo-anel-esmeralda
      data:      formato AAAA-MM-DD (ex.: "2026-08-01") — controla a ordem mostrada.
-     capa:      foto de capa do artigo (aparece na lista do blog). Deixe "" se usar capaVideo.
+    capa:      foto de capa local (images/...) ou URL HTTPS pública. Deixe "" se usar capaVideo.
      capaVideo: (opcional) um vídeo em vez de foto de capa. Deixe "" se não tiver.
-     galeria:   (opcional) mais fotos/vídeos do trabalho, mostrados no fim do artigo.
+    galeria:   (opcional) mais fotos/vídeos locais ou URLs HTTPS, mostrados no fim do artigo.
      pt/es/en:
        titulo: título do artigo
        resumo: 1-2 frases que aparecem na lista do blog
@@ -24,7 +24,7 @@
                Dois prefixos especiais dentro de um parágrafo:
                  "## texto"  -> vira um subtítulo dentro do artigo
                  "> texto"   -> vira uma citação em destaque (dourado, itálico)
-                 "@ images/blog/foto.jpg | legenda"  -> foto (ou .mp4) entre parágrafos,
+                 "@ images/blog/meu-artigo-01.jpg | legenda"  -> foto (ou .mp4) entre parágrafos,
                                          a legenda depois do | é opcional
    ============================================================================ */
 
@@ -40,9 +40,9 @@ window.BLOG = {
       galeria: [],
       pt: {
         titulo: "O Artista e a Harmonia Lítica",
-        resumo: "A história do mestre ourives por trás do Cristal Bellísimo — da infância entre prata e ouro até a criação da técnica que chama de Harmonia Lítica.",
+        resumo: "Da infância entre prata e ouro à criação da Harmonia Lítica: conheça a trajetória do mestre ourives por trás do Cristal Bellísimo.",
         corpo: [
-          "Há histórias que começam muito antes de uma marca existir. A história deste joalheiro começa na infância, entre o brilho da prata e do ouro, o perfume do jasmim e as noites observadas sob um céu estrelado.",
+          "Há histórias que começam muito antes de uma marca existir. A trajetória de Royer começa na infância, entre o brilho da prata e do ouro, o perfume do jasmim e as noites observadas sob um céu estrelado.",
           "Nascido em uma cidade de sete colinas, cercada por um grande rio que formava uma baía, ele cresceu observando o trabalho de sua mãe, de seu tio e de outros familiares em um ateliê de prata e ouro.",
           "Ali eram produzidos objetos destinados ao regimento de cavalaria: peças para generais, botões de oficiais, espadas e suas decorações. Ainda criança, ele observava tudo atentamente. O trabalho dos metais despertava nele uma admiração que, anos mais tarde, se transformaria em vocação.",
           "Depois de passar por diferentes trabalhos e atividades, chegou o momento em que tomou os metais nas mãos e começou a moldá-los. A partir daquele instante, não parou mais.",
@@ -96,9 +96,9 @@ window.BLOG = {
       },
       es: {
         titulo: "El Artista y la Armonía Lítica",
-        resumo: "La historia del maestro orfebre detrás de Cristal Bellísimo: de la infancia entre plata y oro hasta la creación de la técnica que llama Armonía Lítica.",
+        resumo: "De la infancia entre plata y oro al nacimiento de la Armonía Lítica: conozca la trayectoria del maestro orfebre detrás de Cristal Bellísimo.",
         corpo: [
-          "Hay historias que comienzan mucho antes de que exista una marca. La historia de este joyero comienza en la infancia, entre el brillo de la plata y del oro, el perfume del jazmín y las noches observadas bajo un cielo estrellado.",
+          "Hay historias que comienzan mucho antes de que exista una marca. La trayectoria de Royer comienza en la infancia, entre el brillo de la plata y del oro, el perfume del jazmín y las noches observadas bajo un cielo estrellado.",
           "Nacido en una ciudad de siete colinas, rodeada por un gran río que formaba una bahía, creció observando el trabajo de su madre, de su tío y de otros familiares en un taller de plata y oro.",
           "Allí se producían objetos destinados al regimiento de caballería: piezas para generales, botones de oficiales, espadas y sus decoraciones. Siendo aún niño, lo observaba todo con atención. El trabajo de los metales despertaba en él una admiración que, años más tarde, se transformaría en vocación.",
           "Después de pasar por distintos trabajos y actividades, llegó el momento en que tomó los metales con sus manos y comenzó a darles forma. Desde ese instante, no se detuvo más.",
@@ -152,9 +152,9 @@ window.BLOG = {
       },
       en: {
         titulo: "The Artist and Lithic Harmony",
-        resumo: "The story of the master goldsmith behind Cristal Bellísimo — from a childhood among silver and gold to the creation of the technique he calls Lithic Harmony.",
+        resumo: "From a childhood among silver and gold to the creation of Lithic Harmony: discover the master goldsmith behind Cristal Bellísimo.",
         corpo: [
-          "Some stories begin long before a brand exists. This jeweler's story begins in childhood, among the gleam of silver and gold, the scent of jasmine and nights spent watching a starry sky.",
+          "Some stories begin long before a brand exists. Royer's story begins in childhood, among the gleam of silver and gold, the scent of jasmine and nights spent watching a starry sky.",
           "Born in a city of seven hills, surrounded by a great river that formed a bay, he grew up watching the work of his mother, his uncle and other relatives in a silver and gold workshop.",
           "There they made objects for the cavalry regiment: pieces for generals, officers' buttons, swords and their decorations. Still a child, he watched everything closely. Working with metals awakened in him an admiration that, years later, would become a vocation.",
           "After going through different jobs and activities, the moment came when he took metal in his hands and began to shape it. From that instant, he never stopped.",
@@ -214,11 +214,11 @@ window.BLOG = {
     ,{
       slug: "titulo-curto-sem-espacos",
       data: "2026-08-01",
-      capa: "images/blog/NOVA-CAPA.jpg",
+      capa: "images/blog/titulo-curto-sem-espacos-capa.jpg",
       capaVideo: "",
       galeria: [
-        "images/blog/foto-extra-1.jpg",
-        "images/blog/video-extra.mp4"
+        "images/blog/titulo-curto-sem-espacos-01.jpg",
+        "images/blog/titulo-curto-sem-espacos-video-01.mp4"
       ],
       pt: { titulo: "Título do Artigo", resumo: "Resumo curto.", corpo: ["Primeiro parágrafo.", "Outro parágrafo."] },
       es: { titulo: "Título del Artículo", resumo: "Resumen corto.", corpo: ["Primer párrafo."] },
@@ -228,3 +228,103 @@ window.BLOG = {
 
   ]
 };
+
+(() => {
+const articleToSplit = window.BLOG.posts[0];
+const languageCodes = ['pt', 'es', 'en'];
+/* Em cada parte, preencha capa/galeria quando as fotos estiverem prontas. */
+const storyParts = [
+  {
+    slug: 'infancia-e-primeiros-passos',
+    capa: '',
+    galeria: [],
+    starts: { pt: 0, es: 0, en: 0 },
+    pt: { titulo: 'A Infância e os Primeiros Passos', resumo: 'Conheça Royer: entre a prata e o ouro nasceu a curiosidade que se transformaria em uma vida dedicada à joalheria.' },
+    es: { titulo: 'La Infancia y los Primeros Pasos', resumo: 'Conozca a Royer: entre la plata y el oro nació la curiosidad que se convertiría en una vida dedicada a la joyería.' },
+    en: { titulo: 'Childhood and First Steps', resumo: 'Meet Royer: among silver and gold, a curiosity took shape and became a lifelong craft in jewelry.' }
+  },
+  {
+    slug: 'harmonia-litica',
+    capa: '',
+    galeria: [],
+    starts: {
+      pt: '## O nascimento da Harmonia Lítica',
+      es: '## El nacimiento de la Armonía Lítica',
+      en: '## The birth of Lithic Harmony'
+    },
+    pt: { titulo: 'O Nascimento da Harmonia Lítica', resumo: 'Uma reflexão sobre proporção, movimento e equilíbrio, traduzida em desenhos que ganham forma no metal e na pedra.' },
+    es: { titulo: 'El Nacimiento de la Armonía Lítica', resumo: 'Una reflexión sobre proporción, movimiento y equilibrio, traducida en diseños que toman forma en el metal y la piedra.' },
+    en: { titulo: 'The Birth of Lithic Harmony', resumo: 'A reflection on proportion, movement and balance, translated into designs shaped in metal and stone.' }
+  },
+  {
+    slug: 'pedra-e-joia-unica',
+    capa: '',
+    galeria: [],
+    starts: {
+      pt: '## A pedra como começo',
+      es: '## La piedra como comienzo',
+      en: '## The stone as a beginning'
+    },
+    pt: { titulo: 'A Pedra e a Joia Única', resumo: 'Pedras naturais, escolhas singulares e a ideia de criar uma joia que encontre a pessoa certa.' },
+    es: { titulo: 'La Piedra y la Joya Única', resumo: 'Piedras naturales, elecciones singulares y la idea de crear una joya para la persona indicada.' },
+    en: { titulo: 'The Stone and the One-of-a-Kind Jewel', resumo: 'Natural stones, singular choices and the idea of creating a jewel for the person who will wear it.' }
+  },
+  {
+    slug: 'atelie-e-tempo-de-criacao',
+    capa: '',
+    galeria: [],
+    starts: {
+      pt: '## O ateliê',
+      es: '## El taller',
+      en: '## The atelier'
+    },
+    pt: { titulo: 'O Ateliê e o Tempo da Criação', resumo: 'Um lugar de tranquilidade, técnicas tradicionais e o tempo necessário para cada peça encontrar seu equilíbrio.' },
+    es: { titulo: 'El Taller y el Tiempo de Creación', resumo: 'Un lugar de tranquilidad, técnicas tradicionales y el tiempo necesario para que cada pieza encuentre su equilibrio.' },
+    en: { titulo: 'The Atelier and the Time of Creation', resumo: 'A place of calm, traditional techniques and the time each piece needs to find its balance.' }
+  },
+  {
+    slug: 'materia-arte-e-encontro',
+    capa: '',
+    galeria: [],
+    starts: {
+      pt: '## Matéria e princípio',
+      es: '## Materia y principio',
+      en: '## Matter and principle'
+    },
+    pt: { titulo: 'Matéria, Arte e Encontro', resumo: 'Materiais, criatividade e a relação entre o artista, a obra e as pessoas que reconhecem seu valor.' },
+    es: { titulo: 'Materia, Arte y Encuentro', resumo: 'Materiales, creatividad y el vínculo entre el artista, la obra y las personas que reconocen su valor.' },
+    en: { titulo: 'Matter, Art and Connection', resumo: 'Materials, creativity and the connection between the artist, the work and the people who value it.' }
+  }
+];
+
+function findPartStart(body, marker, lang){
+  if(marker===0)return 0;
+  const index=body.indexOf(marker);
+  if(index<0)throw new Error(`Section marker missing for ${lang}: ${marker}`);
+  return index;
+}
+
+const splitArticles=storyParts.map((part,index)=>{
+  const post={
+    slug:`${articleToSplit.slug}-${part.slug}`,
+    data:articleToSplit.data,
+    capa:part.capa||'',
+    capaVideo:'',
+    galeria:part.galeria||[]
+  };
+  languageCodes.forEach(lang=>{
+    const body=articleToSplit[lang].corpo;
+    const start=findPartStart(body,part.starts[lang],lang);
+    const next=storyParts[index+1];
+    const end=next?findPartStart(body,next.starts[lang],lang):body.length;
+    post[lang]={
+      titulo:part[lang].titulo,
+      resumo:part[lang].resumo,
+      corpo:body.slice(start,end)
+    };
+  });
+  return post;
+});
+
+window.BLOG.posts=[...splitArticles,...window.BLOG.posts.slice(1)];
+})();

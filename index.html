@@ -24,12 +24,12 @@
     .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden}
     .hero-bg{position:absolute;inset:0}
     .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top}
-    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,43,75,.4) 0%,rgba(26,43,75,.25) 40%,rgba(26,43,75,.75) 100%)}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(var(--overlay-rgb),.4) 0%,rgba(var(--overlay-rgb),.25) 40%,rgba(var(--overlay-rgb),.75) 100%)}
     .hero-c{position:relative;z-index:1;text-align:center;padding:0 32px;max-width:780px}
     .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:40px}
     .scroll-h{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:7px}
-    .scroll-h span{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(254,249,240,.45)}
-    .scroll-l{width:1px;height:36px;background:linear-gradient(to bottom,rgba(254,249,240,.45),transparent);animation:pu 2s ease-in-out infinite}
+    .scroll-h span{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(var(--light-rgb),.45)}
+    .scroll-l{width:1px;height:36px;background:linear-gradient(to bottom,rgba(var(--light-rgb),.45),transparent);animation:pu 2s ease-in-out infinite}
     @keyframes pu{0%,100%{opacity:.5}50%{opacity:.15}}
 
     /* TRUST */
@@ -42,8 +42,8 @@
 
     /* SECTIONS */
     .sec{padding:96px 0}
-    .sec-d{background:var(--sc)}
-    .sec-dark{background:var(--p);color:var(--s)}
+    .sec-d{background:var(--p)}
+    .sec-dark{background:var(--p);color:var(--ink)}
     .sl{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--g);margin-bottom:12px;display:block}
     .sl.gold{color:var(--gd)}
     .gbar{width:44px;height:1px;background:var(--g);margin:16px 0}
@@ -68,11 +68,11 @@
     .card{cursor:pointer}
     .card-img{overflow:hidden}
     .card-img img{width:100%;height:320px;object-fit:cover;object-position:center;transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
-    /* altura das peças em destaque é controlada por catalogo.js (destaque:true) */
+    /* altura das peças em destaque é controlada por content/catalogo.js (destaque:true) */
     .card:hover .card-img img{transform:scale(1.04)}
     .card-info{padding:16px 4px 28px}
     .card-meta{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
-    .card-title{font-family:'Libre Caslon Text',serif;font-size:22px;font-weight:400;color:var(--p);margin-bottom:8px}
+    .card-title{font-family:'Libre Caslon Text',serif;font-size:22px;font-weight:400;color:var(--ink);margin-bottom:8px}
     .card-desc{font-size:13px;color:var(--il);line-height:1.7;margin-bottom:14px}
     .gstrip{display:flex;gap:5px;margin-top:10px;overflow-x:auto;padding-bottom:4px}
     .gstrip img{width:58px;height:58px;object-fit:cover;cursor:pointer;opacity:.6;transition:opacity .2s;flex-shrink:0;pointer-events:all}
@@ -86,12 +86,12 @@
     .cert-h{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--b);padding-bottom:18px;margin-bottom:24px;flex-wrap:wrap;gap:10px}
     .cert-g{display:grid;grid-template-columns:1fr 1fr;gap:24px 44px;margin-bottom:24px}
     .cfl{font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
-    .cfv{font-size:13px;color:var(--p);line-height:1.65}
+    .cfv{font-size:13px;color:var(--ink);line-height:1.65}
     .cert-q{border-top:1px solid var(--b);padding-top:20px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:var(--il);text-align:center;line-height:1.65}
 
     /* GEM CARDS */
     .gem-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-    .gem-c{background:var(--s);border:1px solid var(--b);padding:26px}
+    .gem-c{background:var(--p);border:1px solid var(--b);padding:26px}
     .mohs{height:3px;background:var(--sh);border-radius:2px;margin:8px 0 12px}
     .mohs-f{height:100%;background:var(--g);border-radius:2px}
 
@@ -101,7 +101,7 @@
     .atitem img,.atitem video{width:100%;height:300px;object-fit:cover;display:block}
     .atitem img{cursor:pointer;transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
     .atitem:hover img{transform:scale(1.04)}
-    .atcap{font-size:11px;letter-spacing:.02em;color:rgba(254,249,240,.55);padding:8px 2px 0;text-align:center}
+    .atcap{font-size:11px;letter-spacing:.02em;color:rgba(var(--light-rgb),.55);padding:8px 2px 0;text-align:center}
     @media(max-width:900px){.atgrid{grid-template-columns:1fr}}
 
     /* CTA */
@@ -114,25 +114,25 @@
     .ftr{background:var(--p);color:var(--s);padding:64px 0 0}
     .fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px}
     .fct{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gd);margin-bottom:16px}
-    .fl{display:block;font-size:13px;color:rgba(254,249,240,.6);margin-bottom:9px;transition:color .2s}
+    .fl{display:block;font-size:13px;color:rgba(var(--light-rgb),.6);margin-bottom:9px;transition:color .2s}
     .fl:hover{color:var(--gd)}
-    .fb{border-top:1px solid rgba(254,249,240,.1);padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-    .ff{font-size:11px;color:rgba(254,249,240,.3);letter-spacing:.03em}
-    .legal-links a{font-size:11px;color:rgba(254,249,240,.3);margin-left:16px;transition:color .2s}
+    .fb{border-top:1px solid rgba(var(--light-rgb),.1);padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    .ff{font-size:11px;color:rgba(var(--light-rgb),.55);letter-spacing:.03em}
+    .legal-links a{font-size:11px;color:rgba(var(--light-rgb),.55);margin-left:16px;transition:color .2s}
     .legal-links a:hover{color:var(--gd)}
     .flang{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
     .flang button{background:none;border:none;cursor:pointer;font-size:12px;font-weight:600;padding:0;
-      font-family:'Hanken Grotesk',sans-serif;color:rgba(254,249,240,.5);transition:color .2s}
+      font-family:'Hanken Grotesk',sans-serif;color:rgba(var(--light-rgb),.65);transition:color .2s}
     .flang button:hover,.flang button.on{color:var(--gd)}
-    .flang .d{color:rgba(254,249,240,.3)}
+    .flang .d{color:rgba(var(--light-rgb),.55)}
 
     /* LIGHTBOX */
-    .lb{display:none;position:fixed;inset:0;z-index:1000;background:rgba(26,43,75,.93);align-items:center;justify-content:center}
+    .lb{display:none;position:fixed;inset:0;z-index:1000;background:rgba(var(--overlay-rgb),.93);align-items:center;justify-content:center}
     .lb.on{display:flex}
     .lb img{max-width:90vw;max-height:88vh;object-fit:contain;pointer-events:none}
-    .lb-x{position:absolute;top:22px;right:28px;background:none;border:none;color:#fef9f0;font-size:26px;cursor:pointer;opacity:.7;font-family:sans-serif}
+    .lb-x{position:absolute;top:22px;right:28px;background:none;border:none;color:var(--s);font-size:26px;cursor:pointer;opacity:.7;font-family:sans-serif}
     .lb-x:hover{opacity:1}
-    .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:#fef9f0;font-size:36px;cursor:pointer;opacity:.55;font-family:serif}
+    .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--s);font-size:36px;cursor:pointer;opacity:.55;font-family:serif}
     .lb-nav:hover{opacity:1}
     .lb-prev{left:20px}.lb-next{right:20px}
 
@@ -143,9 +143,6 @@
 
     /* RESPONSIVE */
     @media(max-width:900px){
-      nav{display:none}
-      .burger{display:flex}
-      /* o seletor de idioma CONTINUA visível no celular (antes desaparecia) */
       .alma{grid-template-columns:1fr}
       .alma-t{padding:48px 20px}
       .colgrid{grid-template-columns:1fr}
@@ -159,9 +156,6 @@
     @media(max-width:540px){
       .fg{grid-template-columns:1fr}
       .hero-btns{flex-direction:column;align-items:center}
-      /* o botão "Consultar" sai do cabeçalho apertado — o botão flutuante do WhatsApp cobre a função */
-      .hdr-r .btn{display:none}
-      .hdr-r{gap:10px}
     }
   </style>
 </head>
@@ -209,8 +203,8 @@
   </div>
   <div class="hero-c fi">
     <span class="label gold" style="letter-spacing:.22em;margin-bottom:20px;display:block;" data-i18n="he">Cristal Bellísimo · Handmade Jewellery · Brasil</span>
-    <h1 class="serif" style="font-size:clamp(40px,7vw,76px);font-weight:400;color:#fef9f0;line-height:1.06;" data-i18n="ht">El Valor de la Naturaleza</h1>
-    <p style="font-size:16px;font-weight:300;font-style:italic;color:rgba(254,249,240,.78);margin-top:20px;" data-i18n="hs">Joias artesanais que guardam histórias atemporais</p>
+    <h1 class="serif" style="font-size:clamp(40px,7vw,76px);font-weight:400;color:var(--s);line-height:1.06;" data-i18n="ht">El Valor de la Naturaleza</h1>
+    <p style="font-size:16px;font-weight:300;font-style:italic;color:rgba(var(--light-rgb),.9);margin-top:20px;" data-i18n="hs">Joias artesanais que guardam histórias atemporais</p>
     <div class="hero-btns">
       <a href="#colecoes" class="btn btn-g" data-i18n="hb1">Descobrir a Coleção</a>
       <a href="#heranca" class="btn btn-ow" data-i18n="hb2">Conhecer o Mestre</a>
@@ -270,20 +264,20 @@
     <h2 class="serif" style="font-size:clamp(28px,4vw,48px);font-weight:400;" data-i18n="ctt">As Peças</h2>
   </div>
 
-  <!-- CATÁLOGO — gerado automaticamente a partir de catalogo.js -->
+  <!-- CATÁLOGO — gerado automaticamente a partir de content/catalogo.js -->
   <div id="catGrid"></div>
   <div id="catEditorial"></div>
 
 </div>
 </section>
 
-<!-- ATELIÊ / PROCESSO — conteúdo em catalogo.js (SITE.atelie); esconde-se sozinho se vazio -->
+<!-- ATELIÊ / PROCESSO — conteúdo em content/catalogo.js (SITE.atelie); esconde-se sozinho se vazio -->
 <section class="sec sec-dark" id="atelie">
 <div class="container">
   <div style="text-align:center;margin-bottom:48px;" class="fi">
     <span class="sl gold" id="atRotulo"></span>
-    <h2 class="serif" style="font-size:clamp(26px,3.5vw,44px);font-weight:400;color:#fef9f0;" id="atTitulo"></h2>
-    <p style="font-size:15px;font-style:italic;color:rgba(254,249,240,.7);max-width:560px;margin:14px auto 0;" id="atIntro"></p>
+    <h2 class="serif" style="font-size:clamp(26px,3.5vw,44px);font-weight:400;color:var(--s);" id="atTitulo"></h2>
+    <p style="font-size:15px;font-style:italic;color:rgba(var(--light-rgb),.9);max-width:560px;margin:14px auto 0;" id="atIntro"></p>
   </div>
   <div class="atgrid" id="atelieGrid"></div>
 </div>
@@ -311,7 +305,7 @@
       <div><p class="cfl" data-i18n="cm">Metalurgia</p><p class="cfv" data-i18n="cmv">Prata Fina · Ouro · Platina</p></div>
       <div><p class="cfl" data-i18n="cg">Gemologia</p><p class="cfv" data-i18n="cgv">Ametista · Granate · Turquesa<br>Coral · Água-Marinha · Safira</p></div>
       <div><p class="cfl" data-i18n="ck">Técnica</p><p class="cfv" data-i18n="ckv">Filigrana Tradicional<br>Granulação · Engaste à Mão</p></div>
-      <div><p class="cfl" data-i18n="cr">Artesão</p><p class="cfv">[Nome do Mestre]<br><span data-i18n="crv">Mestre Ourives · Cristal Bellísimo</span></p></div>
+      <div><p class="cfl" data-i18n="cr">Ourives</p><p class="cfv">Royer<br><span data-i18n="crv">Mestre Ourives · Cristal Bellísimo</span></p></div>
     </div>
     <p class="cert-q" data-i18n="cq">"A pedra precisa ser natural."</p>
   </div>
@@ -345,7 +339,7 @@
 <div class="cta">
   <div class="cta-bg"><img src="images/colecoes/anelcitrino-3.jpg" alt="" id="imgCta"></div>
   <div class="cta-c fi">
-    <h2 class="serif" style="font-size:clamp(32px,5.5vw,64px);font-weight:400;font-style:italic;color:#fef9f0;line-height:1.1;margin:14px 0 36px;" data-i18n="ctat">Junte-se ao Legado</h2>
+    <h2 class="serif" style="font-size:clamp(32px,5.5vw,64px);font-weight:400;font-style:italic;color:var(--s);line-height:1.1;margin:14px 0 36px;" data-i18n="ctat">Junte-se ao Legado</h2>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
       <a href="https://wa.me/5562994503554" data-wa="consulta" target="_blank" rel="noopener" class="btn btn-g" data-i18n="ctab1">Agendar Consulta Privada</a>
       <a href="#colecoes" class="btn btn-ow" data-i18n="ctab2">Explorar a Coleção</a>
@@ -358,9 +352,9 @@
 <footer class="ftr"><div class="container">
   <div class="fg">
     <div>
-      <p class="serif" style="font-size:20px;font-weight:400;color:#fef9f0;letter-spacing:.1em;margin-bottom:6px;">Cristal Bellísimo</p>
+      <p class="serif" style="font-size:20px;font-weight:400;color:var(--s);letter-spacing:.1em;margin-bottom:6px;">Cristal Bellísimo</p>
       <p class="label gold" style="margin-bottom:16px;">Handmade Jewellery</p>
-      <p style="font-size:13px;color:rgba(254,249,240,.55);line-height:1.75;margin-bottom:18px;" data-i18n="ftg">Joalheria artesanal sobre uma colina, entre a floresta e o rio. Ouro, prata, filigrana e pedras naturais.</p>
+      <p style="font-size:13px;color:rgba(var(--light-rgb),.8);line-height:1.75;margin-bottom:18px;" data-i18n="ftg">Joalheria artesanal sobre uma colina, entre a floresta e o rio. Ouro, prata, filigrana e pedras naturais.</p>
       <a href="https://www.instagram.com/cristalbellisimo" target="_blank" rel="noopener" class="fl">Instagram @cristalbellisimo</a>
       <a href="mailto:cristalbellisimo@gmail.com" class="fl">cristalbellisimo@gmail.com</a>
       <a href="https://wa.me/5562994503554" data-wa="geral" target="_blank" rel="noopener" class="fl">WhatsApp +55 62 99450-3554</a>
@@ -381,7 +375,7 @@
       <p class="fct" data-i18n="fc3">Legal</p>
       <a href="privacy.html" class="fl" data-i18n="lp">Política de Privacidade</a>
       <a href="terms.html" class="fl" data-i18n="lt">Termos de Uso</a>
-      <p style="font-size:12px;color:rgba(254,249,240,.3);line-height:1.6;margin-top:6px;" data-i18n="llg">Protegido pela LGPD (Lei 13.709/2018).</p>
+      <p style="font-size:12px;color:rgba(var(--light-rgb),.55);line-height:1.6;margin-top:6px;" data-i18n="llg">Protegido pela LGPD (Lei 13.709/2018).</p>
       <p class="fct" style="margin-top:22px;" data-i18n="fc4">Idioma</p>
       <div class="flang" id="flang"></div>
     </div>
@@ -411,16 +405,22 @@
 /* ── i18n ── */
 const T={
 pt:{nv1:'Coleções',nv2:'A Herança',nv3:'Gemologia',nv4:'Contato',nv5:'Ateliê',nvb:'Blog',bi:'Consultar',he:'Cristal Bellísimo · Handmade Jewellery · Brasil',ht:'El Valor de la Naturaleza',hs:'Joias artesanais que guardam histórias atemporais',hb1:'Descobrir a Coleção',hb2:'Conhecer o Mestre',hsc:'Descobrir',ty:'Anos de Ofício',th:'Artesanal',ts:'Pedras Naturais',tu:'Peças Únicas',ac:'Capítulo I · A Herança',at1:'Harmonia Lítica:',at2:'A Técnica do Mestre',ab:'Ele chama sua técnica de Harmonia Lítica — uma busca pelo equilíbrio entre pedra e metal que começou na infância, observando o trabalho da família num ateliê de prata e ouro, e que hoje ganha forma num pequeno ateliê sobre uma colina, entre a floresta, o rio e o céu estrelado.',as:'MMXXIV · Crônicas do Ateliê',spt:'Metodologia Técnica',spu:'Pureza',spm:'Método',spmv:'Filigrana · Granulação · Engaste à Mão',sph:'Dedicação',sphv:'Dias ou semanas por peça',spo:'Origem',spov:'Colina, Floresta e Rio',spg:'Pedras',spgv:'100% Naturais e Certificadas',cc:'Capítulo II · Coleções',ctt:'As Peças',bip:'Consultar esta peça',ctc:'Capítulo III · Archivo Técnico',cth:'Certificado de Origem',ce:'Certificado de Origem',ctt2:'A Coleção Herança',ca:'Cristal Bellísimo Ateliê · Brasil',cm:'Metalurgia',cmv:'Prata Fina · Ouro · Platina',cg:'Gemologia',cgv:'Ametista · Granate · Turquesa\nCoral · Água-Marinha · Safira',ck:'Técnica',ckv:'Filigrana Tradicional\nGranulação · Engaste à Mão',cr:'Artesão',crv:'Mestre Ourives · Cristal Bellísimo',cq:'"A pedra precisa ser natural."',gc:'Capítulo IV · Gemologia',gt:'Conheça as Pedras',gs:'Acreditamos que entender uma pedra é aprender a amá-la.',gm:'Dureza Mohs',g1n:'Ametista',g1o:'ORIGEM: Brasil · Uruguai · Zâmbia',g1d:'Do grego "não embriagado". Violeta pálido ao roxo profundo. Símbolo de clareza e proteção.',g2n:'Granate',g2o:'ORIGEM: Brasil · Índia · África',g2d:'Do latim "granum". A pedra cor de brasa, símbolo de paixão, lealdade e energia vital.',g3n:'Turquesa',g3o:'ORIGEM: Irã · EUA · Egito',g3d:'5.000 anos de história. Sagrada para os nativos americanos e egípcios. O azul-céu eterno.',g4n:'Água-Marinha',g4o:'ORIGEM: Brasil · Minas Gerais',g4d:'Do latim "aqua marina". Brasil, maior produtor mundial das mais puras. A cor do oceano.',g5n:'Coral',g5o:'ORIGEM: Mediterrâneo · Japão',g5d:'Matéria orgânica viva. Adorno humano há 25.000 anos. Símbolo de proteção.',g6n:'Pedra da Lua',g6o:'ORIGEM: Sri Lanka · Índia',g6d:'A pedra que captura a luz da lua em seu interior. Sagrada na tradição hindu.',gcta:'Consultar Pedras Disponíveis',ctat:'Junte-se ao Legado',ctab1:'Agendar Consulta Privada',ctab2:'Explorar a Coleção',ftg:'Joalheria artesanal sobre uma colina, entre a floresta e o rio. Ouro, prata, filigrana e pedras naturais.',fc1:'Coleções',f6:'Sob Encomenda',fc2:'O Ateliê',fc3:'Legal',lp:'Política de Privacidade',lt:'Termos de Uso',llg:'Protegido pela LGPD (Lei 13.709/2018).',fc4:'Idioma',fr:'Todos os direitos reservados.',fm:'Feito à mão sobre uma colina, entre a floresta e o rio'},
-es:{nv1:'Colecciones',nv2:'La Herencia',nv3:'Gemología',nv4:'Contacto',nv5:'Atelier',nvb:'Blog',bi:'Consultar',he:'Cristal Bellísimo · Handmade Jewellery · Brasil',ht:'El Valor de la Naturaleza',hs:'Joyas artesanales que guardan historias atemporales',hb1:'Descubrir la Colección',hb2:'Conocer al Maestro',hsc:'Descubrir',ty:'Años de Oficio',th:'Artesanal',ts:'Piedras Naturales',tu:'Piezas Únicas',ac:'Capítulo I · La Herencia',at1:'Armonía Lítica:',at2:'La Técnica del Maestro',ab:'Él llama a su técnica Armonía Lítica — una búsqueda del equilibrio entre piedra y metal que comenzó en la infancia, observando el trabajo de la familia en un taller de plata y oro, y que hoy toma forma en un pequeño taller sobre una colina, entre el bosque, el río y el cielo estrellado.',as:'MMXXIV · Crónicas del Atelier',spt:'Metodología Técnica',spu:'Pureza',spm:'Método',spmv:'Filigrana · Granulación · Engaste a Mano',sph:'Dedicación',sphv:'Días o semanas por pieza',spo:'Origen',spov:'Colina, Bosque y Río',spg:'Piedras',spgv:'100% Naturales y Certificadas',cc:'Capítulo II · Colecciones',ctt:'Las Piezas',bip:'Consultar esta pieza',ctc:'Capítulo III · Archivo Técnico',cth:'Certificado de Origen',ce:'Certificado de Origen',ctt2:'La Colección Herencia',ca:'Cristal Bellísimo Atelier · Brasil',cm:'Metalurgia',cmv:'Plata Fina · Oro · Platino',cg:'Gemología',cgv:'Amatista · Granate · Turquesa\nCoral · Agua Marina · Zafiro',ck:'Técnica',ckv:'Filigrana Tradicional\nGranulación · Engaste a Mano',cr:'Artesano',crv:'Maestro Orfebre · Cristal Bellísimo',cq:'"La piedra debe ser natural."',gc:'Capítulo IV · Gemología',gt:'Conozca las Piedras',gs:'Creemos que entender una piedra es aprender a amarla.',gm:'Dureza Mohs',g1n:'Amatista',g1o:'ORIGEN: Brasil · Uruguay · Zambia',g1d:'Del griego "no embriagado". Violeta pálido al púrpura profundo. Símbolo de claridad y protección.',g2n:'Granate',g2o:'ORIGEN: Brasil · India · África',g2d:'Del latín "granum". La piedra color brasa, símbolo de pasión, lealtad y energía vital.',g3n:'Turquesa',g3o:'ORIGEN: Irán · EE.UU. · Egipto',g3d:'5.000 años de historia. Sagrada para los nativos americanos y egipcios. El azul-cielo eterno.',g4n:'Agua Marina',g4o:'ORIGEN: Brasil · Minas Gerais',g4d:'Del latín "aqua marina". Brasil, mayor productor mundial. El color del océano.',g5n:'Coral',g5o:'ORIGEN: Mediterráneo · Japón',g5d:'Materia orgánica viva. Adorno humano hace 25.000 años. Símbolo de protección.',g6n:'Piedra de Luna',g6o:'ORIGEN: Sri Lanka · India',g6d:'La piedra que captura la luz de la luna en su interior. Sagrada en la tradición hindú.',gcta:'Consultar Piedras Disponibles',ctat:'Únase al Legado',ctab1:'Agendar Consulta Privada',ctab2:'Explorar la Colección',ftg:'Joyería artesanal sobre una colina, entre el bosque y el río. Oro, plata, filigrana y piedras naturales.',fc1:'Colecciones',f6:'Bajo Pedido',fc2:'El Atelier',fc3:'Legal',lp:'Política de Privacidad',lt:'Términos de Uso',llg:'Protegido por la LGPD (Ley 13.709/2018).',fc4:'Idioma',fr:'Todos los derechos reservados.',fm:'Hecho a mano sobre una colina, entre el bosque y el río'},
+es:{nv1:'Colecciones',nv2:'La Herencia',nv3:'Gemología',nv4:'Contacto',nv5:'Atelier',nvb:'Blog',bi:'Consultar',he:'Cristal Bellísimo · Handmade Jewellery · Brasil',ht:'El Valor de la Naturaleza',hs:'Joyas artesanales que guardan historias atemporales',hb1:'Descubrir la Colección',hb2:'Conocer al ',hsc:'Descubrir',ty:'Años de Oficio',th:'Artesanal',ts:'Piedras Naturales',tu:'Piezas Únicas',ac:'Capítulo I · La Herencia',at1:'Armonía Lítica:',at2:'La Técnica del ',ab:'Él llama a su técnica Armonía Lítica — una búsqueda del equilibrio entre piedra y metal que comenzó en la infancia, observando el trabajo de la familia en un taller de plata y oro, y que hoy toma forma en un pequeño taller sobre una colina, entre el bosque, el río y el cielo estrellado.',as:'MMXXIV · Crónicas del Atelier',spt:'Metodología Técnica',spu:'Pureza',spm:'Método',spmv:'Filigrana · Granulación · Engaste a Mano',sph:'Dedicación',sphv:'Días o semanas por pieza',spo:'Origen',spov:'Colina, Bosque y Río',spg:'Piedras',spgv:'100% Naturales y Certificadas',cc:'Capítulo II · Colecciones',ctt:'Las Piezas',bip:'Consultar esta pieza',ctc:'Capítulo III · Archivo Técnico',cth:'Certificado de Origen',ce:'Certificado de Origen',ctt2:'La Colección Herencia',ca:'Cristal Bellísimo Atelier · Brasil',cm:'Metalurgia',cmv:'Plata Fina · Oro · Platino',cg:'Gemología',cgv:'Amatista · Granate · Turquesa\nCoral · Agua Marina · Zafiro',ck:'Técnica',ckv:'Filigrana Tradicional\nGranulación · Engaste a Mano',cr:'Artesano',crv:' Orfebre · Cristal Bellísimo',cq:'"La piedra debe ser natural."',gc:'Capítulo IV · Gemología',gt:'Conozca las Piedras',gs:'Creemos que entender una piedra es aprender a amarla.',gm:'Dureza Mohs',g1n:'Amatista',g1o:'ORIGEN: Brasil · Uruguay · Zambia',g1d:'Del griego "no embriagado". Violeta pálido al púrpura profundo. Símbolo de claridad y protección.',g2n:'Granate',g2o:'ORIGEN: Brasil · India · África',g2d:'Del latín "granum". La piedra color brasa, símbolo de pasión, lealtad y energía vital.',g3n:'Turquesa',g3o:'ORIGEN: Irán · EE.UU. · Egipto',g3d:'5.000 años de historia. Sagrada para los nativos americanos y egipcios. El azul-cielo eterno.',g4n:'Agua Marina',g4o:'ORIGEN: Brasil · Minas Gerais',g4d:'Del latín "aqua marina". Brasil, mayor productor mundial. El color del océano.',g5n:'Coral',g5o:'ORIGEN: Mediterráneo · Japón',g5d:'Materia orgánica viva. Adorno humano hace 25.000 años. Símbolo de protección.',g6n:'Piedra de Luna',g6o:'ORIGEN: Sri Lanka · India',g6d:'La piedra que captura la luz de la luna en su interior. Sagrada en la tradición hindú.',gcta:'Consultar Piedras Disponibles',ctat:'Únase al Legado',ctab1:'Agendar Consulta Privada',ctab2:'Explorar la Colección',ftg:'Joyería artesanal sobre una colina, entre el bosque y el río. Oro, plata, filigrana y piedras naturales.',fc1:'Colecciones',f6:'Bajo Pedido',fc2:'El Atelier',fc3:'Legal',lp:'Política de Privacidad',lt:'Términos de Uso',llg:'Protegido por la LGPD (Ley 13.709/2018).',fc4:'Idioma',fr:'Todos los derechos reservados.',fm:'Hecho a mano sobre una colina, entre el bosque y el río'},
 en:{nv1:'Collections',nv2:'Heritage',nv3:'Gemology',nv4:'Contact',nv5:'Atelier',nvb:'Blog',bi:'Inquire',he:'Cristal Bellísimo · Handmade Jewellery · Brazil',ht:'The Value of Nature',hs:'Handmade jewels that hold timeless stories',hb1:'Discover the Collection',hb2:'Meet the Master',hsc:'Discover',ty:'Years of Craft',th:'Handmade',ts:'Natural Stones',tu:'Unique Pieces',ac:'Chapter I · Heritage',at1:'Lithic Harmony:',at2:'The Master\'s Technique',ab:'He calls his technique Lithic Harmony — a search for balance between stone and metal that began in childhood, watching his family\'s work in a silver and gold workshop, and that today takes shape in a small atelier on a hillside, among the forest, the river and the starlit sky.',as:'MMXXIV · Chronicles of the Atelier',spt:'Technical Methodology',spu:'Purity',spm:'Method',spmv:'Filigree · Granulation · Hand-Setting',sph:'Dedication',sphv:'Days or weeks per piece',spo:'Origin',spov:'Hillside, Forest and River',spg:'Gemstones',spgv:'100% Natural & Certified',cc:'Chapter II · Collections',ctt:'The Pieces',bip:'Inquire about this piece',ctc:'Chapter III · Technical Archive',cth:'Certificate of Origin',ce:'Certificate of Origin',ctt2:'The Heritage Collection',ca:'Cristal Bellísimo Atelier · Brazil',cm:'Metallurgy',cmv:'Fine Silver · Gold · Platinum',cg:'Gemology',cgv:'Amethyst · Garnet · Turquoise\nCoral · Aquamarine · Sapphire',ck:'Technique',ckv:'Traditional Filigree\nGranulation · Hand-Set',cr:'Artisan',crv:'Master Goldsmith · Cristal Bellísimo',cq:'"The stone must be natural."',gc:'Chapter IV · Gemology',gt:'Know the Stones',gs:'We believe that understanding a stone is learning to love it.',gm:'Mohs Hardness',g1n:'Amethyst',g1o:'ORIGIN: Brazil · Uruguay · Zambia',g1d:'From Greek "not intoxicated". Pale violet to deep purple. Symbol of clarity and protection.',g2n:'Garnet',g2o:'ORIGIN: Brazil · India · Africa',g2d:'From Latin "granum". The ember-colored stone, symbol of passion, loyalty and vital energy.',g3n:'Turquoise',g3o:'ORIGIN: Iran · USA · Egypt',g3d:'5,000 years of history. Sacred to Native Americans and Egyptians. The eternal sky-blue.',g4n:'Aquamarine',g4o:'ORIGIN: Brazil · Minas Gerais',g4d:'From Latin "aqua marina". Brazil is the world\'s largest producer of the purest specimens.',g5n:'Coral',g5o:'ORIGIN: Mediterranean · Japan',g5d:'Living organic matter. Human adornment for 25,000 years. Symbol of protection.',g6n:'Moonstone',g6o:'ORIGIN: Sri Lanka · India',g6d:'The stone that captures moonlight within. Sacred in Hindu tradition. Unique adularescence.',gcta:'Inquire About Stone Availability',ctat:'Join the Legacy',ctab1:'Book a Private Consultation',ctab2:'Explore the Collection',ftg:'Artisan jewellery on a hillside, among the forest and the river. Gold, silver, filigree and natural gemstones.',fc1:'Collections',f6:'Bespoke',fc2:'The Atelier',fc3:'Legal',lp:'Privacy Policy',lt:'Terms of Use',llg:'Protected under Brazilian Data Protection Law (LGPD).',fc4:'Language',fr:'All rights reserved.',fm:'Handmade on a hillside, among the forest and the river'}
 };
+T.pt.cr='Ourives';T.pt.crv='Mestre Ourives · Cristal Bellísimo';
+T.es.cr='Orfebre';T.es.crv='Maestro Orfebre · Cristal Bellísimo';
+T.en.cr='Goldsmith';T.en.crv='Master Goldsmith · Cristal Bellísimo';
+T.pt.hb2='Conhecer Royer';T.pt.at2='A Técnica de Royer';
+T.es.hb2='Conocer a Royer';T.es.at2='La Técnica de Royer';
+T.en.hb2='Meet Royer';T.en.at2="Royer's Technique";
 
 /* ── fade-in (IntersectionObserver) ── */
 const io=new IntersectionObserver(ee=>ee.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');}),{threshold:.07,rootMargin:'0px 0px -20px 0px'});
 function obsFI(root){(root||document).querySelectorAll('.fi').forEach(e=>io.observe(e));}
 
 /* ══════════════════════════════════════════════════════════════════
-   CATÁLOGO DINÂMICO — lê o conteúdo de catalogo.js (window.SITE)
+  CATÁLOGO DINÂMICO — lê o conteúdo de content/catalogo.js (window.SITE)
    ══════════════════════════════════════════════════════════════════ */
 const WA='https://wa.me/5562994503554';
 /* Mensagens gerais do WhatsApp — chegam já no idioma que o visitante está usando no site.
@@ -455,7 +455,7 @@ function renderRodape(lang){
   box.innerHTML=SITE.pecas.map(p=>`<a href="#colecoes" class="fl">${esc(txOf(p,lang).titulo)}</a>`).join('');
 }
 const WAMSG={pt:t=>`Olá! Tenho interesse na peça ${t}.`,es:t=>`¡Hola! Me interesa la pieza ${t}.`,en:t=>`Hello! I'm interested in the ${t} piece.`};
-function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
 function waLink(lang,titulo){return WA+'?text='+encodeURIComponent((WAMSG[lang]||WAMSG.pt)(titulo));}
 function txOf(o,lang){return o[lang]||o.pt||o.en||o.es||{meta:'',titulo:'',desc:''};}
 
@@ -468,23 +468,41 @@ function stripThumbs(p,slot,tx){
   let html='';
   const t=esc((tx&&tx.titulo)||'');
   (p.fotos||[]).forEach((f,i)=>{
-    html+=`<img src="${esc(f)}" ${i===0?'class="on" ':''}onclick="setFoto(${slot},'${esc(f)}',this,'${t}')" alt="${t} — foto ${i+1}" loading="lazy">`;
+    html+=`<img src="${esc(f)}" data-gallery-photo data-gallery-slot="${slot}" ${i===0?'class="on" ':''}alt="${t} — foto ${i+1}" loading="lazy">`;
   });
-  if(p.video){html+=`<span class="gvid" onclick="setVid(${slot},'${esc(p.video)}',this)" title="Vídeo" role="button" tabindex="0" aria-label="Ver vídeo">&#9654;</span>`;}
+  if(p.video){html+=`<span class="gvid" data-gallery-video data-gallery-slot="${slot}" data-gallery-src="${esc(p.video)}" title="Vídeo" role="button" tabindex="0" aria-label="Ver vídeo">&#9654;</span>`;}
   return html;
 }
 function setFoto(slot,src,el,alt){
-  const s=document.getElementById('slot-'+slot);if(!s)return;
+  const s=document.getElementById('slot-'+slot),strip=el.closest('.gstrip');if(!s||!strip)return;
   const h=s.getAttribute('data-h');
-  s.innerHTML=`<img src="${src}" alt="${alt||''}" loading="lazy"${h?` style="height:${h}px"`:''}>`;
-  el.closest('.gstrip').querySelectorAll('img,.gvid').forEach(i=>i.classList.remove('on'));el.classList.add('on');
+  const image=document.createElement('img');
+  image.src=src;image.alt=alt||'';image.loading='lazy';
+  if(h)image.style.height=`${h}px`;
+  s.replaceChildren(image);
+  strip.querySelectorAll('img,.gvid').forEach(item=>item.classList.remove('on'));el.classList.add('on');
 }
 function setVid(slot,src,el){
-  const s=document.getElementById('slot-'+slot);if(!s)return;
+  const s=document.getElementById('slot-'+slot),strip=el.closest('.gstrip');if(!s||!strip)return;
   const h=s.getAttribute('data-h');
-  s.innerHTML=`<video src="${src}" controls autoplay playsinline${h?` style="height:${h}px"`:''}></video>`;
-  el.closest('.gstrip').querySelectorAll('img,.gvid').forEach(i=>i.classList.remove('on'));el.classList.add('on');
+  const video=document.createElement('video');
+  video.src=src;video.controls=true;video.autoplay=true;video.playsInline=true;
+  if(h)video.style.height=`${h}px`;
+  s.replaceChildren(video);
+  strip.querySelectorAll('img,.gvid').forEach(item=>item.classList.remove('on'));el.classList.add('on');
 }
+const catalogGrid=document.getElementById('catGrid');
+catalogGrid?.addEventListener('click',event=>{
+  const image=event.target.closest('img[data-gallery-photo]');
+  if(image){setFoto(Number(image.dataset.gallerySlot),image.getAttribute('src'),image,image.alt);return;}
+  const video=event.target.closest('[data-gallery-video]');
+  if(video)setVid(Number(video.dataset.gallerySlot),video.dataset.gallerySrc,video);
+});
+catalogGrid?.addEventListener('keydown',event=>{
+  if(!event.target.matches('[data-gallery-video]')||!['Enter',' '].includes(event.key))return;
+  event.preventDefault();
+  setVid(Number(event.target.dataset.gallerySlot),event.target.dataset.gallerySrc,event.target);
+});
 function cardHTML(p,lang,idx,delay,centered){
   const tx=txOf(p,lang);
   const cs=centered?' style="flex:0 1 420px;max-width:100%"':'';
@@ -508,8 +526,8 @@ function editorialHTML(e,lang){
     <div style="overflow:hidden;">${media}</div>
     <div style="background:var(--p);padding:52px 44px;display:flex;flex-direction:column;justify-content:center;">
       <span class="sl gold">${esc(tx.meta)}</span>
-      <h3 class="serif" style="font-size:clamp(24px,3vw,40px);font-weight:400;font-style:italic;color:#fef9f0;margin:12px 0 16px;">${esc(tx.titulo)}</h3>
-      <p style="font-size:14px;color:rgba(254,249,240,.68);line-height:1.8;margin-bottom:24px;">${esc(tx.desc)}</p>
+      <h3 class="serif" style="font-size:clamp(24px,3vw,40px);font-weight:400;font-style:italic;color:var(--s);margin:12px 0 16px;">${esc(tx.titulo)}</h3>
+      <p style="font-size:14px;color:rgba(var(--light-rgb),.85);line-height:1.8;margin-bottom:24px;">${esc(tx.desc)}</p>
       <a href="${waLink(lang,tx.titulo)}" target="_blank" rel="noopener" class="btn btn-g" style="align-self:flex-start;">${esc(txUI(lang,'bip'))}</a>
     </div>
   </div>`;
@@ -557,11 +575,21 @@ function renderAtelie(lang){
     const capHTML=cap?`<figcaption class="atcap">${esc(cap)}</figcaption>`:'';
     const media=isVideo(src)
       ? `<video src="${esc(src)}" controls playsinline preload="metadata"></video>`
-      : `<img src="${esc(src)}" alt="${esc(cap)}" loading="lazy" onclick="olb('${esc(src)}',window.ATELIE_FOTOS)">`;
+      : `<img src="${esc(src)}" alt="${esc(cap)}" data-lightbox-src="${esc(src)}" role="button" tabindex="0" loading="lazy">`;
     return `<figure class="atitem fi">${media}${capHTML}</figure>`;
   }).join('');
   obsFI(g);
 }
+const atelierGrid=document.getElementById('atelieGrid');
+atelierGrid?.addEventListener('click',event=>{
+  const image=event.target.closest('img[data-lightbox-src]');
+  if(image)olb(image.dataset.lightboxSrc,window.ATELIE_FOTOS);
+});
+atelierGrid?.addEventListener('keydown',event=>{
+  if(!event.target.matches('img[data-lightbox-src]')||!['Enter',' '].includes(event.key))return;
+  event.preventDefault();
+  olb(event.target.dataset.lightboxSrc,window.ATELIE_FOTOS);
+});
 function renderFixas(){
   if(!window.SITE||!SITE.imagens)return;
   const map={imgHero:'hero',imgHeranca:'heranca',imgCta:'ctaFundo'};

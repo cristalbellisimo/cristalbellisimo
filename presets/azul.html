@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preset azul — Cristal Bellisimo</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{width:100%;height:100%;margin:0;background:#183b5b}
+    iframe{display:block;width:100%;height:100%;height:100dvh;border:0}
+  </style>
+</head>
+<body>
+<iframe id="site" src="../index.html" title="Preset azul-marinho do site Cristal Bellisimo"></iframe>
+<script>
+const frame = document.getElementById('site');
+const theme = `
+  :root{
+    --preview-bg:#183b5b;
+    --preview-ink:#fbf9f3;
+    --preview-accent:#d5b564;
+    --preview-border:rgba(251,249,243,.24);
+  }
+  html,body{background:var(--preview-bg)!important;color:var(--preview-ink)!important}
+  body *{color:var(--preview-ink)!important;border-color:var(--preview-border)!important}
+  .fi{opacity:1!important;transform:none!important;transition:none!important}
+  .hdr,.mnav,.lang-menu,.trust,.sec,.sec-d,.sec-dark,.gem-c,.ftr,.spec,.cert,.cta,
+  .card-info{background-color:var(--preview-bg)!important;color:var(--preview-ink)!important}
+  .gold,.sl.gold,.card-meta,.tnum,.fct,.cfl,.spt td:first-child,
+  .fl:hover,.legal-links a:hover,.flang button.on{color:var(--preview-accent)!important}
+  .gbar,.alma-s::before,.mohs-f{background-color:var(--preview-accent)!important}
+  .btn-g{background:var(--preview-accent)!important;color:var(--preview-bg)!important}
+  .btn-n,.gstrip .gvid{background:#102d47!important;color:var(--preview-ink)!important}
+  .btn-ow{color:var(--preview-ink)!important;border-color:var(--preview-border)!important}
+  .btn-gh{color:var(--preview-accent)!important;border-color:var(--preview-accent)!important}
+  .lb{background:rgba(12,29,47,.94)!important}
+`;
+
+function applyTheme(){
+  const page = frame.contentDocument;
+  if(!page || !page.head) return;
+  let style = page.getElementById('preview-theme');
+  if(!style){
+    style = page.createElement('style');
+    style.id = 'preview-theme';
+    page.head.appendChild(style);
+  }
+  style.textContent = theme;
+}
+
+frame.addEventListener('load', applyTheme);
+applyTheme();
+</script>
+</body>
+</html>

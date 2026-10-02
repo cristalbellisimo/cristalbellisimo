@@ -10,7 +10,9 @@
    Regras simples:
      • Texto vai sempre entre aspas:  "assim"
      • Cada peça termina com uma vírgula depois do }  -> },
-     • As fotos ficam na pasta  images/ ... o caminho é sempre "images/pasta/ficheiro.jpg"
+     • Cada peça tem um código único (CB-0001, CB-0002...). O código identifica a peça,
+       não a pedra — duas ametistas diferentes recebem códigos diferentes.
+     • Fotos aceitam caminho local (images/...) ou URL HTTPS pública do Supabase.
      • Nunca apague as chavetas { } nem os parêntesis retos [ ] — só o texto lá dentro.
    ============================================================================ */
 
@@ -35,7 +37,10 @@ window.SITE = {
        3. Troque as fotos e os textos.
 
      Cada peça tem:
+       codigo:   identificador único da peça; não repita, mesmo se a pedra for igual.
        fotos:    lista de fotos. A 1.ª é a foto grande; as outras são miniaturas.
+                 Local: "images/pecas/CB-0001-01.jpg"
+                 Supabase: cole aqui a URL HTTPS pública da foto.
        video:    (opcional) 1 vídeo. Deixe  ""  se a peça não tiver vídeo.
                  Ex.: "images/colecoes/passaro-video.mp4"
        destaque: true deixa o cartão MAIOR (fica bonito no meio de uma linha de 3).
@@ -51,6 +56,7 @@ window.SITE = {
        As outras voltam quando tiverem foto e texto reais — já no Supabase. */
 
     {
+      codigo: "CB-0001",
       fotos: [
         "images/colecoes/anelcitrino-1.jpg",
         "images/colecoes/anelcitrino-2.jpg",
@@ -71,7 +77,8 @@ window.SITE = {
        bloco copiado. Exemplo já pronto (basta tirar a barra e os asteriscos):
 
     ,{
-      fotos: ["images/colecoes/NOVA-1.jpg", "images/colecoes/NOVA-2.jpg"],
+      codigo: "CB-0002",
+      fotos: ["images/pecas/CB-0002-01.jpg", "images/pecas/CB-0002-02.jpg"],
       video: "",
       destaque: false,
       pt: { meta: "Prata 950 · Esmeralda", titulo: "Anel Esmeralda", desc: "Descrição em português." },
