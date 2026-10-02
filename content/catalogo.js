@@ -41,8 +41,8 @@ window.SITE = {
        fotos:    lista de fotos. A 1.ª é a foto grande; as outras são miniaturas.
                  Local: "images/pecas/CB-0001-01.jpg"
                  Supabase: cole aqui a URL HTTPS pública da foto.
-       video:    (opcional) 1 vídeo. Deixe  ""  se a peça não tiver vídeo.
-                 Ex.: "images/colecoes/passaro-video.mp4"
+      video:    (opcional) 1 vídeo. Deixe  ""  se a peça não tiver vídeo.
+           Aceita arquivo .mp4 ou link YouTube (youtube.com/watch?v=...).
        destaque: true deixa o cartão MAIOR (fica bonito no meio de uma linha de 3).
                  Use false na maioria das peças.
        pt / es / en: os textos em cada idioma
@@ -75,7 +75,7 @@ window.SITE = {
     {
       codigo: "CB-0002",
       fotos: [
-        "images/pecas/CB-0002-01.jpg"
+        "images/pecas/CB-0002-01.jpg.JPG"
       ],
       video: "",
       destaque: false,
@@ -100,7 +100,7 @@ window.SITE = {
   /* ==========================================================================
      3) PEÇA EM DESTAQUE / EDITORIAL (a faixa larga com fundo azul)
      Deixe   editorial: null   se não quiser esta faixa.
-     Também aceita  video: "..."  em vez de continuar com foto.
+    Também aceita  video: "..."  em vez de continuar com foto (arquivo local ou YouTube).
      ========================================================================== */
   editorial: null,   /* "Flor do Campo" saiu: não tem foto real */
 
@@ -113,7 +113,8 @@ window.SITE = {
        no site (não mostra nada partido). Assim que puser 1 item, ela aparece.
      • Guarde os ficheiros na pasta  images/atelie/  e liste-os aqui.
          - Foto:  "images/atelie/processo-1.jpg"
-         - Vídeo: "images/atelie/torno.mp4"   (deteta o vídeo pelo .mp4 sozinho)
+         - Vídeo local: "images/atelie/torno.mp4"
+         - YouTube: { src: "https://youtu.be/AbCdEfGh123", legenda: { pt: "...", es: "...", en: "..." } }
          - Com legenda (opcional):
              { src: "images/atelie/filigrana.jpg",
                legenda: { pt: "Filigrana à mão", es: "Filigrana a mano", en: "Filigree by hand" } }

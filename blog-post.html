@@ -27,7 +27,7 @@
 
     .capa{max-width:1120px;margin:0 auto;padding:0 56px}
     @media(max-width:768px){.capa{padding:0 20px}}
-    .capa img,.capa video{width:100%;height:440px;object-fit:cover;margin-top:32px}
+    .capa img,.capa video,.capa iframe{width:100%;height:440px;object-fit:cover;margin-top:32px;border:0}
     @media(max-width:700px){.capa img,.capa video{height:280px}}
     .capa-vazia{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
       height:440px;margin-top:32px;padding:32px;background:var(--p);color:var(--s);text-align:center}
@@ -44,10 +44,11 @@
     .corpo-q{font-family:'Libre Caslon Text',serif;font-style:italic;font-size:20px;color:var(--g);
       border-left:2px solid var(--g);padding-left:20px;margin:28px 0}
     .corpo-fig{margin:32px 0}
-    .corpo-fig img,.corpo-fig video{width:100%;height:auto;max-height:560px;object-fit:cover}
+    .corpo-fig img,.corpo-fig video,.corpo-fig iframe{width:100%;height:auto;max-height:560px;object-fit:cover;border:0}
+    .corpo-fig iframe{aspect-ratio:16/9;height:auto}
     .corpo-fig figcaption{font-size:12px;font-style:italic;color:var(--il);margin-top:8px;text-align:center}
     .galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-top:36px}
-    .galeria img,.galeria video{width:100%;height:220px;object-fit:cover}
+    .galeria img,.galeria video,.galeria iframe{width:100%;height:220px;object-fit:cover;border:0}
     @media(max-width:600px){.galeria{grid-template-columns:1fr}}
     .cta-fim{border-top:1px solid var(--b);margin-top:48px;padding-top:32px;text-align:center}
     .btn{padding:12px 26px}  /* botões do artigo, um pouco maiores que o padrão */
@@ -96,6 +97,7 @@
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<script src="assets/js/media.js"></script>
 <script src="content/blog.js"></script>
 <script>
 const TP = {
@@ -104,7 +106,7 @@ const TP = {
   en: { back:'← Blog', naoEnc:'Article not found.', voltar:'Back to Blog', outrasHistorias:'More Stories from the Atelier', fotoPendente:'Cover photo placeholder' }
 };
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-function isVideo(src){return /\.(mp4|webm|mov|m4v|ogg)$/i.test(src||'');}
+function isVideo(src){return CBMedia.isVideo(src);}
 function fmtData(iso,lang){
   const d=new Date(iso+'T00:00:00');
   if(isNaN(d))return iso||'';
@@ -120,8 +122,10 @@ function corpoHTML(paragrafos){
     if(p.startsWith('@ ')){
       /* foto ou vídeo entre os parágrafos:  "@ images/blog/foto.jpg | legenda opcional" */
       const partes=p.slice(2).split('|'), src=partes[0].trim(), leg=(partes[1]||'').trim();
-      const midia=isVideo(src)
-        ? `<video src="${esc(src)}" controls playsinline preload="metadata"></video>`
+      const midia=CBMedia.isYouTube(src)
+        ? CBMedia.youtubeFrame(src,leg||'Vídeo do YouTube')
+        : isVideo(src)
+          ? `<video src="${esc(src)}" controls playsinline preload="metadata"></video>`
         : `<img src="${esc(src)}" alt="${esc(leg)}" loading="lazy">`;
       return `<figure class="corpo-fig">${midia}${leg?`<figcaption>${esc(leg)}</figcaption>`:''}</figure>`;
     }
@@ -132,7 +136,9 @@ function galeriaHTML(itens){
   if(!itens||!itens.length) return '';
   return `<div class="galeria">${itens.map(it=>{
     const src=typeof it==='string'?it:(it&&it.src)||'';
-    return isVideo(src) ? `<video src="${esc(src)}" controls playsinline preload="metadata"></video>` : `<img src="${esc(src)}" alt="" loading="lazy">`;
+    return CBMedia.isYouTube(src)
+      ? CBMedia.youtubeFrame(src,'Vídeo do YouTube')
+      : isVideo(src) ? `<video src="${esc(src)}" controls playsinline preload="metadata"></video>` : `<img src="${esc(src)}" alt="" loading="lazy">`;
   }).join('')}</div>`;
 }
 /* Idiomas do seletor deste artigo; os textos do artigo ficam em content/blog.js. */
@@ -181,7 +187,9 @@ function render(){
 
   const capaWrap=document.getElementById('capaWrap');
   capaWrap.innerHTML = post.capaVideo
-    ? `<video src="${esc(post.capaVideo)}" controls playsinline></video>`
+    ? (CBMedia.isYouTube(post.capaVideo)
+      ? CBMedia.youtubeFrame(post.capaVideo,tx.titulo)
+      : `<video src="${esc(post.capaVideo)}" controls playsinline></video>`)
     : (post.capa ? `<img src="${esc(post.capa)}" alt="${esc(tx.titulo)}">` : `<div class="capa-vazia" role="img" aria-label="${esc(tp.fotoPendente)} — ${esc(tx.titulo)}"><span class="label">${esc(tp.fotoPendente)}</span><span class="serif">${esc(tx.titulo)}</span></div>`);
 
   document.getElementById('conteudo').innerHTML = `

@@ -11,7 +11,7 @@ Publicado por GitHub Pages a partir deste repositório.
 | --- | --- |
 | **Peças do catálogo** (fotos, textos, destaque) | `content/catalogo.js` |
 | **Artigos do blog** | `content/blog.js` |
-| **Guia simples de fotos e IDs** | `GUIA-FOTOS.md` |
+| **Guia para trocar textos, fotos e vídeos** | `GUIA-FOTOS.md` |
 | **Verificar fotos e IDs** | `node scripts/verificar-conteudo.cjs` |
 | **Cores, tipografia e componentes compartilhados** | `assets/css/base.css` (tokens no início do arquivo) |
 | **Layout e conteúdo institucional da página inicial** | `index.html` |
@@ -88,6 +88,7 @@ O tema verde-floresta é o padrão. Com o servidor local ativo, abra
 ├── GUIA-FOTOS.md         envio e organização simples de fotos
 │
 ├── assets/css/base.css   cores, tipografia, cabeçalho, seletor de idioma
+├── assets/js/media.js    links e players de vídeo (YouTube e arquivos locais)
 ├── presets/
 │   └── azul.html         tema alternativo
 ├── scripts/
