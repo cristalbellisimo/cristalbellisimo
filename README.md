@@ -16,7 +16,7 @@ Publicado por GitHub Pages a partir deste repositório.
 | **Cores, tipografia e componentes compartilhados** | `assets/css/base.css` (tokens no início do arquivo) |
 | **Layout e conteúdo institucional da página inicial** | `index.html` |
 | **Layout da lista e do artigo do blog** | `blog.html` / `blog-post.html` |
-| **Preset secundário com fundo azul** | `presets/azul.html` |
+| **Presets finais para comparar: 08 verde/marfim e 09 azul/marfim** | `presets/verde.html` / `presets/azul.html` |
 | Páginas legais | `privacy.html` / `terms.html` |
 | Fotografias e vídeos | `images/` (arquivos locais; referências nos arquivos de conteúdo) |
 | Origem externa das fontes tipográficas | Google Fonts, declaradas nas páginas HTML |
@@ -31,8 +31,9 @@ Publicado por GitHub Pages a partir deste repositório.
 
 - **Tokens visuais compartilhados vivem em** `assets/css/base.css`.
   O padrão do projeto é verde-floresta (`--p: #24483b`), com detalhes sage e
-  dourados. O preset azul fica em `presets/azul.html`. Estilos exclusivos de
-  uma página ficam no bloco `<style>` do respectivo HTML.
+  dourados. Os presets finais para comparar são 08 verde/marfim e 09 azul/marfim,
+  em `presets/verde.html` e `presets/azul.html`. Estilos exclusivos de uma página
+  ficam no bloco `<style>` do respectivo HTML.
 - **`index.html` tem que ficar na raiz** — é o arquivo que o GitHub Pages procura.
 - **Todos os caminhos são relativos** (`images/...`, não `/images/...`), porque o
   site é servido numa subpasta (`/cristalbellisimo/`). Caminho começando com `/` quebra.
@@ -52,10 +53,11 @@ node scripts/preview-server.cjs
 
 Depois abra `http://localhost:8123` no navegador. Encerre com `Ctrl+C`.
 
-## Preset alternativo
+## Presets para comparar
 
-O tema verde-floresta é o padrão. Com o servidor local ativo, abra
-`http://localhost:8123/presets/azul.html` para comparar a segunda opção.
+Com o servidor local ativo, abra `http://localhost:8123/presets/verde.html` ou
+`http://localhost:8123/presets/azul.html`. As duas páginas permitem alternar
+entre o preset 08 (verde-floresta e marfim) e o 09 (azul-marinho e marfim).
 
 ## Origem e manutenção do conteúdo
 

@@ -7,7 +7,8 @@
 
   As cores compartilhadas vivem nos tokens abaixo. O padrão é verde-floresta:
   --p controla o fundo/identidade, --g os detalhes sage e --gd o dourado.
-  O tema azul secundário fica isolado em presets/azul.html.
+  Os presets finais 08 (verde/marfim) e 09 (azul/marfim) ficam isolados
+  em presets/verde.html e presets/azul.html.
 
    Cada página tem, além disto, o seu próprio estilo de layout dentro do
    próprio arquivo .html — porque esse layout não se repete em lugar nenhum.

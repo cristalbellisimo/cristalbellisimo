@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang="pt">
+<html lang="pt-BR" data-lang="pt" data-theme="palette9">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/base.css">
   <style>
+
+    html[data-theme="palette9"]{
+      --p:#183B5B;
+      --g:#183B5B;
+      --gd:#D8E3EB;
+      --s:#FBF9F3;
+      --sc:#FBFCFA;
+      --sh:#D8E3EB;
+      --ink:#183B5B;
+      --il:#536B7B;
+      --brand-rgb:24,59,91;
+      --gold-rgb:216,227,235;
+      --light-rgb:251,249,243;
+      --overlay-rgb:12,29,47;
+      --b:rgba(24,59,91,.16);
+      --shadow:rgba(12,29,47,.12);
+    }
+    html[data-theme="palette9"] body{background:#FBFCFA;color:#183B5B}
+    html[data-theme="palette9"] .hdr,
+    html[data-theme="palette9"] .mnav,
+    html[data-theme="palette9"] .lang-menu{background:#183B5B;--g:#D8E3EB;--gd:#D8E3EB}
+    html[data-theme="palette9"] .btn-g{background:#D8E3EB;color:#183B5B}
+    html[data-theme="palette9"] .btn-n{background:#183B5B;color:#FBF9F3}
+    html[data-theme="palette9"] .btn-gh{color:#183B5B;border-color:rgba(24,59,91,.35)}
+    html[data-theme="palette9"] .sec-d{
+      background:#FBFCFA;color:#183B5B;--p:#F0F4F7;--g:#183B5B;--gd:#183B5B;
+      --ink:#183B5B;--il:#536B7B;--s:#183B5B;--sh:#D8E3EB;
+    }
+    html[data-theme="palette9"] .sec-dark{
+      background:#183B5B;color:#FBF9F3;--p:#183B5B;--g:#D8E3EB;--gd:#D8E3EB;
+      --ink:#FBF9F3;--il:#D8E3EB;--s:#FBF9F3;--b:rgba(251,249,243,.22);
+    }
+    html[data-theme="palette9"] .ftr{
+      background:#183B5B;color:#FBF9F3;--p:#183B5B;--g:#D8E3EB;--gd:#D8E3EB;
+      --ink:#FBF9F3;--il:#D8E3EB;--s:#FBF9F3;--b:rgba(251,249,243,.16);
+    }
+    html[data-theme="palette9"] .hero .gold{color:#D8E3EB}
+    html[data-theme="palette9"] .gem-c{background:#F0F4F7}
 
     body{overflow-x:hidden}
 
@@ -64,17 +102,18 @@
     .spt tr:last-child td{border-bottom:none}
 
     /* COLLECTION */
-    .colgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-    .card{cursor:pointer}
+    .colgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card{min-width:0;display:flex;flex-direction:column;cursor:pointer;background:#fff;border:1px solid rgba(24,59,91,.14);border-radius:2px;transition:border-color .2s,box-shadow .2s}
+    .card:hover{border-color:rgba(24,59,91,.3);box-shadow:0 8px 22px rgba(12,29,47,.06)}
     .card-img{overflow:hidden}
     .card-img img{width:100%;height:320px;object-fit:cover;object-position:center;transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
     /* altura das peças em destaque é controlada por content/catalogo.js (destaque:true) */
     .card:hover .card-img img{transform:scale(1.04)}
-    .card-info{padding:16px 4px 28px}
+    .card-info{display:flex;flex:1;flex-direction:column;padding:18px 20px 20px}
     .card-meta{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
     .card-title{font-family:'Libre Caslon Text',serif;font-size:22px;font-weight:400;color:var(--ink);margin-bottom:8px}
     .card-desc{font-size:13px;color:var(--il);line-height:1.7;margin-bottom:14px}
-    .gstrip{display:flex;gap:5px;margin-top:10px;overflow-x:auto;padding-bottom:4px}
+    .gstrip{display:flex;gap:6px;margin-top:auto;padding-top:14px;overflow-x:auto;padding-bottom:4px}
     .gstrip img{width:58px;height:58px;object-fit:cover;cursor:pointer;opacity:.6;transition:opacity .2s;flex-shrink:0;pointer-events:all}
     .gstrip img:hover,.gstrip img.on{opacity:1}
     .gstrip .gvid{width:58px;height:58px;display:flex;align-items:center;justify-content:center;background:var(--p);color:var(--gd);cursor:pointer;flex-shrink:0;font-size:15px;opacity:.6;transition:opacity .2s}
@@ -551,8 +590,8 @@ function renderCatalogo(lang){
     SITE.pecas.forEach((p,i)=>{
       const col=i%3, inPart=partial&&i>=base;
       if(col===0)html+=inPart
-        ? '<div class="colrow-c" style="display:flex;justify-content:center;flex-wrap:wrap;gap:2px;margin-top:2px;">'
-        : '<div class="colgrid" style="margin-top:2px;">';
+        ? '<div class="colrow-c" style="display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:16px;">'
+        : '<div class="colgrid" style="margin-top:16px;">';
       html+=cardHTML(p,lang,i,inPart?'':(col===1?'d1':col===2?'d2':''),inPart);
       if(col===2||i===n-1)html+='</div>';
     });

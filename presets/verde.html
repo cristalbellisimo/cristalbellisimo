@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#24483b">
+  <title>Preset 08 · Verde-floresta e marfim | Cristal Bellísimo</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{width:100%;height:100%;margin:0;background:#24483b}
+    body{overflow:hidden;font-family:'Hanken Grotesk',sans-serif}
+    .preset-bar{min-height:54px;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:#24483b;color:#f8f6ec}
+    .preset-title{font:400 15px 'Libre Caslon Text',serif;white-space:nowrap}
+    .preset-nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .preset-nav a{padding:7px 11px;border:1px solid rgba(248,246,236,.35);color:#f8f6ec;font-size:11px;text-decoration:none;white-space:nowrap}
+    .preset-nav a[aria-current="page"]{background:#c3d2b5;border-color:#c3d2b5;color:#24483b}
+    .preset-nav a:last-child{border-color:transparent;text-decoration:underline;text-underline-offset:3px}
+    iframe{display:block;width:100%;height:calc(100% - 54px);height:calc(100dvh - 54px);border:0;background:#f2f7ed}
+    @media(max-width:620px){.preset-bar{align-items:flex-start;flex-direction:column;padding:10px 16px}.preset-nav{justify-content:flex-start}.preset-nav a{padding:6px 9px}iframe{height:calc(100% - 90px);height:calc(100dvh - 90px)}}
+  </style>
+</head>
+<body>
+  <header class="preset-bar">
+    <strong class="preset-title">Preset 08 · Verde-floresta e marfim</strong>
+    <nav class="preset-nav" aria-label="Presets finais">
+      <a href="verde.html" aria-current="page">08 · Verde e marfim</a>
+      <a href="azul.html">09 · Azul e marfim</a>
+      <a href="../index.html">Voltar ao site</a>
+    </nav>
+  </header>
+  <iframe id="site" src="../index.html" title="Cristal Bellísimo com o preset verde-floresta e marfim"></iframe>
+  <script>
+    const frame=document.getElementById('site');
+    const theme=`
+      :root{
+        --p:#24483b;--g:#24483b;--gd:#c3d2b5;--s:#f8f6ec;--sc:#f2f7ed;
+        --sh:#c3d2b5;--ink:#24483b;--il:#536559;--brand-rgb:36,72,59;
+        --gold-rgb:195,210,181;--light-rgb:248,246,236;--overlay-rgb:13,31,25;
+        --b:rgba(36,72,59,.16);--shadow:rgba(13,31,25,.12);
+      }
+      html[data-theme="palette8"] body{background:#f2f7ed!important;color:#24483b!important}
+      html[data-theme="palette8"] .hdr,html[data-theme="palette8"] .mnav,html[data-theme="palette8"] .lang-menu{background:#24483b!important;--g:#f8f6ec;--gd:#c3d2b5}
+      html[data-theme="palette8"] .btn-g{background:#c3d2b5!important;color:#24483b!important}
+      html[data-theme="palette8"] .btn-n{background:#24483b!important;color:#f8f6ec!important}
+      html[data-theme="palette8"] .btn-gh{color:#24483b!important;border-color:rgba(36,72,59,.32)!important}
+      html[data-theme="palette8"] .sec-d{background:#f2f7ed!important;color:#24483b!important;--p:#e7f0de;--g:#24483b;--gd:#24483b;--ink:#24483b;--il:#536559;--s:#24483b;--sh:#c3d2b5}
+      html[data-theme="palette8"] #colecoes{background:#24483b!important;color:#f8f6ec!important;--p:#24483b;--g:#c3d2b5;--gd:#c3d2b5;--ink:#f8f6ec;--il:#e1e9df;--s:#f8f6ec;--b:rgba(248,246,236,.22)}
+      html[data-theme="palette8"] #colecoes .card{background:#fbfcfa;color:#24483b;--p:#e7f0de;--g:#24483b;--gd:#24483b;--ink:#24483b;--il:#536559;--s:#24483b;--b:rgba(36,72,59,.16)}
+      html[data-theme="palette8"] #colecoes .card:hover{border-color:rgba(36,72,59,.3);box-shadow:0 8px 22px rgba(13,31,25,.08)}
+      html[data-theme="palette8"] #atelie.sec-dark{background:#e7f0de!important;color:#24483b!important;--p:#e7f0de;--g:#24483b;--gd:#24483b;--ink:#24483b;--il:#536559;--s:#24483b;--light-rgb:36,72,59;--b:rgba(36,72,59,.18)}
+      html[data-theme="palette8"] #atelie .sl.gold{color:#24483b!important}
+      html[data-theme="palette8"] .sec-dark{background:#24483b!important;color:#f8f6ec!important;--p:#24483b;--g:#c3d2b5;--gd:#c3d2b5;--ink:#f8f6ec;--il:#c3d2b5;--s:#f8f6ec;--b:rgba(248,246,236,.22)}
+      html[data-theme="palette8"] .ftr{background:#24483b!important;color:#f8f6ec!important;--p:#24483b;--g:#c3d2b5;--gd:#c3d2b5;--ink:#f8f6ec;--il:#c3d2b5;--s:#f8f6ec;--b:rgba(248,246,236,.16)}
+      html[data-theme="palette8"] .hero .gold{color:#c3d2b5!important}
+      html[data-theme="palette8"] .gem-c{background:#e7f0de!important}
+    `;
+    function applyTheme(){
+      const doc=frame.contentDocument;
+      if(!doc||!doc.head)return;
+      doc.documentElement.dataset.theme='palette8';
+      let style=doc.getElementById('preset-verde-theme');
+      if(!style){style=doc.createElement('style');style.id='preset-verde-theme';doc.head.appendChild(style)}
+      style.textContent=theme;
+    }
+    frame.addEventListener('load',applyTheme);
+    applyTheme();
+  </script>
+</body>
+</html>
