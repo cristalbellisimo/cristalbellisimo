@@ -117,7 +117,7 @@ YouTube aparece como miniatura leve; o player abre dentro do artigo.
 Para inserir mídia entre os parágrafos, comece um item de `corpo` com `@ ` e
 depois escreva o caminho/URL. A legenda opcional vem depois de `|`:
 
-Na série dividida sobre Harmonia Lítica, procure `storyParts` no fim de
+Na série dividida sobre Harmonia Elíptica, procure `storyParts` no fim de
 `content/blog.js`. Cada parte já tem `capa: ""` e `galeria: []`; preencha a capa
 com o caminho/URL da imagem e a galeria com os caminhos/URLs adicionais.
 

@@ -39,8 +39,8 @@ window.BLOG = {
       capaVideo: "",
       galeria: [],
       pt: {
-        titulo: "O Artista e a Harmonia Lítica",
-        resumo: "Da infância entre prata e ouro à criação da Harmonia Lítica: conheça a trajetória do mestre ourives por trás do Cristal Bellísimo.",
+        titulo: "O Artista e a Harmonia Elíptica",
+        resumo: "Da infância entre prata e ouro à criação da Harmonia Elíptica: conheça a trajetória do mestre ourives por trás do Cristal Bellísimo.",
         corpo: [
           "Há histórias que começam muito antes de uma marca existir. A trajetória de Royer começa na infância, entre o brilho da prata e do ouro, o perfume do jasmim e as noites observadas sob um céu estrelado.",
           "Nascido em uma cidade de sete colinas, cercada por um grande rio que formava uma baía, ele cresceu observando o trabalho de sua mãe, de seu tio e de outros familiares em um ateliê de prata e ouro.",
@@ -54,9 +54,9 @@ window.BLOG = {
           "Mais tarde, vieram também as viagens. Pela América do Sul e posteriormente pela Europa, ele continuou apresentando seu trabalho. Encontrou reconhecimento, vendas e novos públicos, mas, sobretudo, encontrou artistas e diferentes formas de compreender a joalheria.",
           "Em cada cidade que visitava, procurava as joalherias. Entrava para observar, aprender e descobrir alguma coisa nova. Algumas galerias exibiam objetos industrializados, o que lhe causava tristeza. Outras apresentavam trabalhos de artistas que admirava. O contato com essas diferentes experiências foi uma parte importante de seu aprendizado.",
           "Ao longo de décadas, esse olhar constante para o trabalho de outros artistas foi aprimorando sua própria linguagem, até que surgiu um estilo próprio.",
-          "## O nascimento da Harmonia Lítica",
-          "Ele chama sua técnica de Harmonia Lítica. A palavra “lítica” está relacionada ao grego lithos, pedra.",
-          "Para ele, porém, o conceito vai muito além da pedra como matéria. A Harmonia Lítica nasce de uma reflexão sobre o equilíbrio do universo: estrelas, galáxias, planetas e movimentos obedecem a relações, medidas e proporções. Existe, em sua visão, uma força que mantém o universo em harmonia — e essa mesma busca pelo equilíbrio está presente em suas joias.",
+          "## O nascimento da Harmonia Elíptica",
+          "Ele chama sua técnica de Harmonia Elíptica. O nome faz referência às formas elípticas e à busca por equilíbrio.",
+          "Para ele, porém, essa ideia vai além de uma forma geométrica. A Harmonia Elíptica nasce de uma reflexão sobre o equilíbrio do universo: estrelas, galáxias, planetas e movimentos obedecem a relações, medidas e proporções. Existe, em sua visão, uma força que mantém o universo em harmonia — e essa mesma busca pelo equilíbrio está presente em suas joias.",
           "Muitas criações começam a partir de um ponto central. A partir dele surgem movimentos, círculos, eixos e formas. O desenho começa no papel, com lápis, e é repetidamente trabalhado até encontrar uma direção. Depois, aquilo que foi desenhado é levado para a prata, o ouro e as pedras.",
           "Mas o desenho inicial não determina completamente o resultado. Ele é apenas o começo. Durante a execução, novos detalhes aparecem, os ornamentos se modificam e a composição vai encontrando seu próprio equilíbrio.",
           "## Equilíbrio não é necessariamente simetria",
@@ -95,8 +95,8 @@ window.BLOG = {
         ]
       },
       es: {
-        titulo: "El Artista y la Armonía Lítica",
-        resumo: "De la infancia entre plata y oro al nacimiento de la Armonía Lítica: conozca la trayectoria del maestro orfebre detrás de Cristal Bellísimo.",
+        titulo: "El Artista y la Armonía Elíptica",
+        resumo: "De la infancia entre plata y oro al nacimiento de la Armonía Elíptica: conozca la trayectoria del maestro orfebre detrás de Cristal Bellísimo.",
         corpo: [
           "Hay historias que comienzan mucho antes de que exista una marca. La trayectoria de Royer comienza en la infancia, entre el brillo de la plata y del oro, el perfume del jazmín y las noches observadas bajo un cielo estrellado.",
           "Nacido en una ciudad de siete colinas, rodeada por un gran río que formaba una bahía, creció observando el trabajo de su madre, de su tío y de otros familiares en un taller de plata y oro.",
@@ -110,9 +110,9 @@ window.BLOG = {
           "Más tarde llegaron también los viajes. Por América del Sur y después por Europa, continuó presentando su trabajo. Encontró reconocimiento, ventas y nuevos públicos, pero, sobre todo, encontró artistas y distintas formas de comprender la joyería.",
           "En cada ciudad que visitaba, buscaba las joyerías. Entraba para observar, aprender y descubrir algo nuevo. Algunas galerías exhibían objetos industrializados, lo que le causaba tristeza. Otras presentaban trabajos de artistas que admiraba. El contacto con esas distintas experiencias fue una parte importante de su aprendizaje.",
           "A lo largo de décadas, esa mirada constante hacia el trabajo de otros artistas fue perfeccionando su propio lenguaje, hasta que surgió un estilo propio.",
-          "## El nacimiento de la Armonía Lítica",
-          "Él llama a su técnica Armonía Lítica. La palabra «lítica» está relacionada con el griego lithos, piedra.",
-          "Para él, sin embargo, el concepto va mucho más allá de la piedra como materia. La Armonía Lítica nace de una reflexión sobre el equilibrio del universo: estrellas, galaxias, planetas y movimientos obedecen a relaciones, medidas y proporciones. Existe, en su visión, una fuerza que mantiene el universo en armonía, y esa misma búsqueda de equilibrio está presente en sus joyas.",
+          "## El nacimiento de la Armonía Elíptica",
+          "Él llama a su técnica Armonía Elíptica. El nombre hace referencia a las formas elípticas y a la búsqueda del equilibrio.",
+          "Para él, sin embargo, esta idea va más allá de una forma geométrica. La Armonía Elíptica nace de una reflexión sobre el equilibrio del universo: estrellas, galaxias, planetas y movimientos obedecen a relaciones, medidas y proporciones. Existe, en su visión, una fuerza que mantiene el universo en armonía, y esa misma búsqueda de equilibrio está presente en sus joyas.",
           "Muchas creaciones comienzan a partir de un punto central. A partir de él surgen movimientos, círculos, ejes y formas. El dibujo comienza en el papel, con lápiz, y se trabaja una y otra vez hasta encontrar una dirección. Después, lo que fue dibujado se lleva a la plata, al oro y a las piedras.",
           "Pero el dibujo inicial no determina por completo el resultado. Es solo el comienzo. Durante la ejecución aparecen nuevos detalles, los ornamentos se modifican y la composición va encontrando su propio equilibrio.",
           "## Equilibrio no es necesariamente simetría",
@@ -151,8 +151,8 @@ window.BLOG = {
         ]
       },
       en: {
-        titulo: "The Artist and Lithic Harmony",
-        resumo: "From a childhood among silver and gold to the creation of Lithic Harmony: discover the master goldsmith behind Cristal Bellísimo.",
+        titulo: "The Artist and Elliptical Harmony",
+        resumo: "From a childhood among silver and gold to the creation of Elliptical Harmony: discover the master goldsmith behind Cristal Bellísimo.",
         corpo: [
           "Some stories begin long before a brand exists. Royer's story begins in childhood, among the gleam of silver and gold, the scent of jasmine and nights spent watching a starry sky.",
           "Born in a city of seven hills, surrounded by a great river that formed a bay, he grew up watching the work of his mother, his uncle and other relatives in a silver and gold workshop.",
@@ -166,9 +166,9 @@ window.BLOG = {
           "Later came the journeys. Across South America and then Europe, he kept showing his work. He found recognition, sales and new audiences, but above all he met artists and different ways of understanding jewelry.",
           "In every city he visited, he sought out jewelry shops. He went in to observe, to learn and to discover something new. Some galleries displayed industrial objects, which saddened him. Others showed the work of artists he admired. Contact with these different experiences was an important part of his learning.",
           "Over decades, this constant attention to the work of other artists refined his own language, until a style of his own emerged.",
-          "## The birth of Lithic Harmony",
-          "He calls his technique Lithic Harmony. The word “lithic” comes from the Greek lithos, stone.",
-          "For him, however, the concept goes far beyond stone as a material. Lithic Harmony arises from a reflection on the balance of the universe: stars, galaxies, planets and movements obey relationships, measures and proportions. In his view, there is a force that keeps the universe in harmony — and that same search for balance is present in his jewels.",
+          "## The birth of Elliptical Harmony",
+          "He calls his technique Elliptical Harmony. The name refers to elliptical forms and the search for balance.",
+          "For him, however, this idea goes beyond a geometric shape. Elliptical Harmony arises from a reflection on the balance of the universe: stars, galaxies, planets and movements obey relationships, measures and proportions. In his view, there is a force that keeps the universe in harmony — and that same search for balance is present in his jewels.",
           "Many creations begin from a central point. From it come movements, circles, axes and forms. The drawing starts on paper, in pencil, and is reworked again and again until it finds a direction. Then what was drawn is taken to silver, gold and stones.",
           "But the initial drawing does not fully determine the result. It is only the beginning. During the making, new details appear, the ornaments change and the composition finds its own balance.",
           "## Balance is not necessarily symmetry",
@@ -248,13 +248,13 @@ const storyParts = [
     capa: '',
     galeria: [],
     starts: {
-      pt: '## O nascimento da Harmonia Lítica',
-      es: '## El nacimiento de la Armonía Lítica',
-      en: '## The birth of Lithic Harmony'
+      pt: '## O nascimento da Harmonia Elíptica',
+      es: '## El nacimiento de la Armonía Elíptica',
+      en: '## The birth of Elliptical Harmony'
     },
-    pt: { titulo: 'O Nascimento da Harmonia Lítica', resumo: 'Uma reflexão sobre proporção, movimento e equilíbrio, traduzida em desenhos que ganham forma no metal e na pedra.' },
-    es: { titulo: 'El Nacimiento de la Armonía Lítica', resumo: 'Una reflexión sobre proporción, movimiento y equilibrio, traducida en diseños que toman forma en el metal y la piedra.' },
-    en: { titulo: 'The Birth of Lithic Harmony', resumo: 'A reflection on proportion, movement and balance, translated into designs shaped in metal and stone.' }
+    pt: { titulo: 'O Nascimento da Harmonia Elíptica', resumo: 'Uma reflexão sobre proporção, movimento e equilíbrio, traduzida em desenhos que ganham forma no metal e na pedra.' },
+    es: { titulo: 'El Nacimiento de la Armonía Elíptica', resumo: 'Una reflexión sobre proporción, movimiento y equilibrio, traducida en diseños que toman forma en el metal y la piedra.' },
+    en: { titulo: 'The Birth of Elliptical Harmony', resumo: 'A reflection on proportion, movement and balance, translated into designs shaped in metal and stone.' }
   },
   {
     slug: 'pedra-e-joia-unica',
