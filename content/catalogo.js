@@ -66,11 +66,11 @@ window.SITE = {
       video: "",
       destaque: false,
       pt: { meta: "Prata 950 · Citrino · Filigrana", titulo: "Anel Citrino",
-            desc: "Citrino oval facetado engastado em prata 950. A folha esculpida desenha um movimento elíptico e espirais de filigrana — uma forma lítica em equilíbrio cósmico, modelada inteiramente à mão." },
+            desc: "Citrino oval facetado engastado em prata 950. A folha esculpida acompanha um contorno elíptico, entrelaçado a espirais de filigrana — uma composição que evoca equilíbrio cósmico, modelada inteiramente à mão." },
       es: { meta: "Plata 950 · Citrino · Filigrana", titulo: "Anillo Citrino",
-            desc: "Citrino oval facetado engastado en plata 950. La hoja esculpida dibuja un movimiento elíptico y espirales de filigrana — una forma lítica en equilibrio cósmico, modelada enteramente a mano." },
+            desc: "Citrino oval facetado engastado en plata 950. La hoja esculpida sigue un contorno elíptico, entrelazado con espirales de filigrana — una composición que evoca equilibrio cósmico, elaborada enteramente a mano." },
       en: { meta: "Sterling 950 · Citrine · Filigree", titulo: "Citrine Ring",
-            desc: "Faceted oval citrine set in sterling 950. The sculpted leaf traces an elliptical movement and filigree spirals — a lithic form in cosmic balance, shaped entirely by hand." }
+            desc: "Faceted oval citrine set in sterling silver 950. The sculpted leaf follows an elliptical outline, interwoven with filigree spirals — a composition evoking cosmic balance, shaped entirely by hand." }
     },
     {
       codigo: "CB-0002",
