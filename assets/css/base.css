@@ -32,6 +32,30 @@
   --shadow:rgba(5,20,15,.2);
 }
 
+html[data-theme="palette9"]{
+  --p:#183B5B;
+  --g:#183B5B;
+  --gd:#D8E3EB;
+  --s:#FBF9F3;
+  --sc:#FBFCFA;
+  --sh:#D8E3EB;
+  --ink:#183B5B;
+  --il:#536B7B;
+  --brand-rgb:24,59,91;
+  --gold-rgb:216,227,235;
+  --light-rgb:251,249,243;
+  --overlay-rgb:12,29,47;
+  --b:rgba(24,59,91,.16);
+  --shadow:rgba(12,29,47,.12);
+}
+html[data-theme="palette9"] body{background:#FBFCFA;color:#183B5B}
+html[data-theme="palette9"] .hdr,
+html[data-theme="palette9"] .mnav,
+html[data-theme="palette9"] .lang-menu{background:#183B5B;--g:#D8E3EB;--gd:#D8E3EB}
+html[data-theme="palette9"] .btn-g{background:#D8E3EB;color:#183B5B}
+html[data-theme="palette9"] .btn-n{background:#183B5B;color:#FBF9F3}
+html[data-theme="palette9"] .btn-gh{color:#183B5B;border-color:rgba(24,59,91,.35)}
+
 /* ── BASE ─────────────────────────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
